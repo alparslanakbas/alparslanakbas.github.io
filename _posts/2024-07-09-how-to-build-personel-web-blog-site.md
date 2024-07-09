@@ -8,7 +8,7 @@ tags: [Blog, Tutorial, Ruby, jekyll, github]
 ## My First Ever Blog Post
 I've been thinking about starting a blog for a while now and I was procrastinating quite a bit. But, I finally did it and here I am writing my first ever blog post. Suprisingly enough, it will be about my experience setting up my blog and how you can do it too.
 
-![Desktop View](/assets/images/posts/blog_meme.jpg)
+![Desktop View](/assets/img/posts/blog_meme.jpg)
 _Scenario of a developer starting a blog_
 
 ### [YouTube Video Jekyll Tutorial](https://www.youtube.com/watch?v=F8iOU1ci19Q)
@@ -54,7 +54,7 @@ For Chirpy theme, the instructions are as follows:
     - `lang` is the language of the site
 6. Run `bundle exec jekyll s` to start the local server.
 
-![Template Blog](/assets/images/posts/template-blog.png)
+![Template Blog](/assets/img/posts/template-blog.png)
 _The original template you should see_
 
 If you face any issues, you can refer to the [Chripy theme's Getting started guide](https://chirpy.cotes.page/posts/getting-started/).
@@ -89,7 +89,7 @@ Now that you have your domain's DNS setup, Let's head back to Github and configu
 2. Scroll down to the **Pages** section.
 3. Under **Custom domain** enter your domain name and click **Save**.
 
-![Custom Domain](/assets/images/posts/custom-domain.PNG)
+![Custom Domain](/assets/img/posts/custom-domain.PNG)
 _My Github Pages Custom Domain page_
 
 ***Best Practice :*** Click on **Enforce HTTPS** to serve your blog via secure SSL connection. Your site will be configured with a free SSL certificate from [Let's Encrypt](https://letsencrypt.org/).
