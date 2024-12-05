@@ -2,7 +2,7 @@
 title: Rate Limiting in .NET An Essential Tool for Network Traffic Management
 date: 2024-07-11 20:40 +0300
 categories: [Blog, Tutorial, AspNetCore]
-tags: [Blog, Tutorial, Rate-Limitter, AspNetCore, Dotnet7+]
+tags: [Blog, Tutorial, Rate-Limitter, AspNetCore, Dotnet7]
 ---
 
 ## What is the Rate Limitter

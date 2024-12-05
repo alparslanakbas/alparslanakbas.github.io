@@ -16,10 +16,11 @@ timezone: Europe/Istanbul
 
 title: Alparslan Akbaş # the main title
 
-tagline: Age 25 .Net Developer & Software Developer # it will display as the sub-title
+tagline: Age 26 .Net Developer & Software Developer # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  Blog, AspNetCore, Dotnet, Dotnet8, Dotnet9, .Net, AdoNet, Angular, NetCore
+  Professional software development blog focusing on .NET, ASP.NET Core, Angular, and enterprise solutions. 
+  Expert tutorials, best practices, and real-world examples in C#, .NET 8/9, ADO.NET, and web development.
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -46,7 +47,7 @@ social:
 
 # Site Verification Settings
 webmaster_verifications:
-  google: # fill in your Google verification code
+  google: "9a5f0d4dc8cb5f4a" # fill in your Google verification code
   bing: # fill in your Bing verification code
   alexa: # fill in your Alexa verification code
   yandex: # fill in your Yandex verification code
