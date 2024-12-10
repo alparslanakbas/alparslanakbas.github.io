@@ -1,15 +1,15 @@
 ---
 title: Improving Array Search Performance with SearchValues
-date: 2024-12-03 20:00 +0300
+date: 2024-12-10 19:00 +0300
 categories: [Blog, Tutorial, Dotnet8, Dotnet9]
 tags: [Blog, Tutorial, AspNetCore, Dotnet8, Dotnet9, Array]
 ---
 ## Introduction
 Hello,
 
-As you know, searching for data within arrays for specific operations is a common behavior in business processes. However, such operations can lead to significant costs and substantial performance losses. In this article, we will explore the SearchValues feature introduced with .NET 8, designed to improve application performance in such scenarios.
+As you know, searching for data within arrays for specific operations is a common behavior in business processes. However, such operations can lead to significant costs and substantial performance losses. In this article, we will explore the **SearchValues** feature introduced with .NET 8, designed to improve application performance in such scenarios.
 
-SearchValues is a specialized class developed with optimizations such as vectorization and hardware acceleration to enhance computational speed and efficiency when working with large datasets. This class stores the values to be searched in an array as immutable and readonly.
+**SearchValues** is a specialized class developed with optimizations such as vectorization and hardware acceleration to enhance computational speed and efficiency when working with large datasets. This class stores the values to be searched in an array as immutable and readonly.
 
 ## Example
 The SearchValues class can be used as shown in the following example:
@@ -38,7 +38,7 @@ var roles = context.Roles.Where(r => _roles
                             .Contains(r.Name))
                          .ToList();
 ```
-Additionally, as seen in the example above, the SearchValues class is accessed from the System.Buffers namespace.
+Additionally, as seen in the example above, the **SearchValues** class is accessed from the System.Buffers namespace.
 
 See you in my upcoming articles, and happy coding..
 
