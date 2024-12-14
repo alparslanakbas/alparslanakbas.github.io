@@ -1,7 +1,7 @@
 ---
 title: What does mean TPH ? (Table Per Hierarchy)
 date: 2024-10-18 19:38 +0300
-categories: [Blog, Tutorial, AspNetCore, ORM, EntityFramework]
+categories: [AspNetCore, EntityFramework]
 tags: [Blog, Tutorial, Orm, AspNetCore, Dotnet8, EF]
 ---
 

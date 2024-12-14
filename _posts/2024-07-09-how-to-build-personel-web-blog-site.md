@@ -1,8 +1,8 @@
 ---
 title: Starting A Blog Hosted On Github Pages
 date: 2024-07-09 22:37 +0300
-categories: [Blog, Tutorial, Ruby]
-tags: [Blog, Tutorial, Ruby, jekyll, github]
+categories: [Ruby, Jekyll]
+tags: [Blog, Tutorial, Ruby, Jekyll, Github]
 ---
 
 ## My First Ever Blog Post

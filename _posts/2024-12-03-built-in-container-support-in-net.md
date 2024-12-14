@@ -1,7 +1,7 @@
 ---
 title: Built-In Container Support in .NET – Dockerizing .NET Applications Without a Dockerfile
 date: 2024-12-03 20:00 +0300
-categories: [Blog, Tutorial, Dotnet7, Docker]
+categories: [AspNetCore, Dotnet7]
 tags: [Blog, Tutorial, AspNetCore, Dotnet7, Docker]
 ---
 

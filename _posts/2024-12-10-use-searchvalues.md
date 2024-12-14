@@ -1,7 +1,7 @@
 ---
 title: Improving Array Search Performance with SearchValues
 date: 2024-12-10 19:00 +0300
-categories: [Blog, Tutorial, Dotnet8, Dotnet9]
+categories: [AspNetCore, Dotnet9]
 tags: [Blog, Tutorial, AspNetCore, Dotnet8, Dotnet9, Array]
 ---
 ## Introduction

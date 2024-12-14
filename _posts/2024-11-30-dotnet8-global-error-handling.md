@@ -1,7 +1,7 @@
 ---
 title: Asp.NET Core 8 – Global Error Handling
 date: 2024-11-30 22:05 +0300
-categories: [Blog, Tutorial, Dotnet8]
+categories: [AspNetCore, Dotnet8]
 tags: [Blog, Tutorial, AspNetCore, Dotnet8, ErrorHandler]
 ---
 

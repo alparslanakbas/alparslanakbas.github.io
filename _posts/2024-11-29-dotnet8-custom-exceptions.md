@@ -1,7 +1,7 @@
 ---
 title: Asp.NET Core 8 Automatically Handle Exceptions
 date: 2024-11-30 21:40 +0300
-categories: [Blog, Tutorial, Dotnet8]
+categories: [AspNetCore, Dotnet8]
 tags: [Blog, Tutorial, AspNetCore, Dotnet8]
 ---
 

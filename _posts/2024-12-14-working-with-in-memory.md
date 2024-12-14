@@ -1,7 +1,7 @@
 ---
 title: Working with In-Memory Database Using Entity Framework Core
 date: 2024-12-14 23:30 +0300
-categories: [Blog, Tutorial, Dotnet, EF]
+categories: [AspNetCore, EntityFramework]
 tags: [Blog, Tutorial, Dotnet, EF, Memory]
 ---
 
