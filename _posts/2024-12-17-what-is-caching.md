@@ -39,7 +39,8 @@ This caching system is distributed across multiple servers but functions as a un
 In our next content, we will provide a detailed explanation of **In-Memory Caching** and its workings.
 
 You can read here **[In-Memory Cache](https://alparslanakbas.github.io/posts/what-is-in-memory-cache/)**
-<br>
+
+
 You can read here **[Distributed Cache](https://alparslanakbas.github.io/posts/what-is-distributed-cache/)**
 
 
