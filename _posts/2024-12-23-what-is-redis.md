@@ -4,6 +4,8 @@ description: "An introduction to Redis: what makes this in-memory NoSQL store fa
 date: 2024-12-23 23:25 +0300
 categories: [Data, Redis]
 tags: [redis, nosql, caching, use-cases]
+series: "Caching & Redis"
+series_order: 4
 image:
   path: /assets/img/posts/what-is-redis/cover.webp
   alt: 'Title card: What is Redis And Use Cases?'

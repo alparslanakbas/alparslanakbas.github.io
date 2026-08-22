@@ -4,6 +4,8 @@ description: "What distributed caching is, how it keeps data consistent across m
 date: 2024-12-17 23:10 +0300
 categories: [Data, Caching]
 tags: [caching, distributed-systems, redis]
+series: "Caching & Redis"
+series_order: 3
 image:
   path: /assets/img/posts/what-is-distributed-cache/cover.webp
   alt: 'Title card: What is Distributed Caching?'

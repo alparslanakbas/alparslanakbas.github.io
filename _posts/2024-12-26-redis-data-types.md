@@ -4,6 +4,8 @@ description: "A practical tour of Redis's core data types, strings, lists, sets,
 date: 2024-12-26 23:53 +0300
 categories: [Data, Redis]
 tags: [redis, data-types, nosql]
+series: "Caching & Redis"
+series_order: 6
 image:
   path: /assets/img/posts/redis-data-types/cover.webp
   alt: 'Title card: Redis Data Types'
