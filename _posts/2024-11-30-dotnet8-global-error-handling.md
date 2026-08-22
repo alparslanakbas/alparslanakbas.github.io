@@ -1,9 +1,9 @@
 ---
 title: Asp.NET Core 8 – Global Error Handling
-description: "Comparing global error handling approaches in ASP.NET Core 8: custom middleware versus the built-in IExceptionHandler interface, with examples."
+description: "Global error handling in ASP.NET Core: custom middleware vs. IExceptionHandler, ProblemDetails, and a real diagnostics change in .NET 10."
 date: 2024-11-30 22:05 +0300
 categories: [.NET, ASP.NET Core]
-tags: [aspnet-core, dotnet-8, error-handling, middleware]
+tags: [aspnet-core, dotnet-8, error-handling, middleware, problemdetails]
 image:
   path: /assets/img/posts/dotnet8-global-error-handling/cover.webp
   alt: 'Title card: Asp.NET Core 8 - Global Error Handling'
@@ -20,7 +20,7 @@ In such cases, we won’t simply say, "We did our best; it was meant to be." Ins
 
 At the same time, we will focus on advancing the process to its most ideal state by tracing and logging where appropriate, ensuring that these critical components of risk management in the software lifecycle are effectively addressed.
 
-In our previous article titled "[Automatically Manage Exceptions in ASP.NET Core](https://alparslanakbas.github.io/posts/dotnet8-custom-exceptions/)", we explored and experienced the most effective method among those we can apply for achieving this ideal state.
+In our previous article titled "[Automatically Manage Exceptions in ASP.NET Core](/posts/dotnet8-custom-exceptions/)", we explored and experienced the most effective method among those we can apply for achieving this ideal state.
 
 ## Let's Starting
 Alternatively, we can adopt an approach to handle all potential errors in the process by using a middleware like the one below.
@@ -187,6 +187,33 @@ builder.Services.AddExceptionHandler<Global.Error.Handling.Example.New_Method.Ex
 This means that if an error occurs, the DivideByZeroExceptionHandler will be checked first. If it returns false, the NullReferenceExceptionHandler will be checked next. If that also returns false, the ExceptionHandler will be checked last. If any of these return true, the others will not be evaluated. However, if all of them return false, no result will be returned to the user.
 
 I believe that with the IExceptionHandler introduced in ASP.NET Core 8, we can handle error scenarios more effectively and flexibly compared to the middleware approach.
+
+## Update: A Real Breaking Change in .NET 10
+
+Everything above still works exactly as written on .NET 10 — but there's one behavioral change worth knowing about if you're upgrading. Previously, whenever an `IExceptionHandler` handled an exception (returned `true` from `TryHandleAsync`), the middleware *still* recorded diagnostics for it: logging `UnhandledException`, writing a `HandledException` event, and tagging the `http.server.request.duration` metric with `error.type`.
+
+Starting in .NET 10, that stops happening by default. If your handler reports the exception as handled, it's treated as genuinely handled — no more noise in your logs or metrics for errors your code already dealt with. This was a deliberate fix: plenty of people were confused why their "handled" exceptions kept showing up in telemetry anyway.
+
+If you actually want the old behavior back — for example, you're logging inside a catch-all handler and still want the middleware's own diagnostics too — there's an explicit opt-out:
+
+```csharp
+app.UseExceptionHandler(new ExceptionHandlerOptions
+{
+    SuppressDiagnosticsCallback = context => false
+});
+```
+
+Returning `false` from the callback restores the pre-.NET 10 behavior (diagnostics get recorded); returning `true` (the new default) suppresses them.
+
+## A Modern Companion: ProblemDetails
+
+One thing neither of the two approaches above mention: as of .NET 8, ASP.NET Core has first-party support for [RFC 9457 Problem Details](https://www.rfc-editor.org/rfc/rfc9457) — a standard JSON shape for API error responses (`type`, `title`, `status`, `detail`, `instance`). Wiring it up is one line:
+
+```csharp
+builder.Services.AddProblemDetails();
+```
+
+Combined with `UseExceptionHandler()` (no custom handler needed for the default case), unhandled exceptions now come back as a consistent, machine-readable `application/problem+json` response instead of whatever ad hoc shape you'd otherwise hand-roll — the same idea as the [custom exception filter](/posts/dotnet8-custom-exceptions/) covered in the earlier post, just standardized across the whole app instead of per-action.
 
 ![Desktop View](/assets/img/posts/thanks-for-reading.webp)
 _Thanks For Reading_

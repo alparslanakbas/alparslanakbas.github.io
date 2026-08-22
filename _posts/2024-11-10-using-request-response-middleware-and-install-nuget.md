@@ -14,7 +14,7 @@ Hello, in this blog post, we will explain step-by-step how to use our newly rele
 
 ## What is RequestResponse Middleware?
 
-RequestResponse Middleware is a library that allows detailed logging of HTTP requests and responses in ASP.NET Core applications. It provides developers with a powerful tool to monitor the performance of their applications, debug issues, and analyze system events more efficiently. This middleware collects detailed information about HTTP requests and responses and can be configured to log these or handle them with a custom handler.
+RequestResponse Middleware is a library that allows detailed logging of HTTP requests and responses in ASP.NET Core applications. It provides developers with a powerful tool to monitor the performance of their applications, debug issues, and analyze system events more efficiently. This middleware collects detailed information about HTTP requests and responses and can be configured to log these or handle them with a custom handler — a similar idea to [global error handling](/posts/dotnet8-global-error-handling/), just for logging instead of exceptions: one place that sees every request instead of instrumenting each endpoint by hand.
 
 ![Desktop View](/assets/img/posts/request-with-middleware.PNG)
 _Road-Map_
@@ -219,11 +219,13 @@ When using this middleware in your API, you may want to ensure that the logging 
 
 
 ## Summary and Conclusion
-RequestResponse Middleware makes it easier to manage HTTP requests and responses in your ASP.NET Core projects, thereby streamlining the development and debugging process. By using this package in your projects, you can standardize logging operations and establish a more efficient monitoring structure.
+RequestResponse Middleware makes it easier to manage HTTP requests and responses in your ASP.NET Core projects, thereby streamlining the development and debugging process. By using this package in your projects, you can standardize logging operations and establish a more efficient monitoring structure. If you want those logs written to disk instead of just streamed to your configured log providers, there's a companion package for that too — see [File Logger Middleware](/posts/using-file-logger-middleware-and-install-nuget/).
 
 If you have any questions or suggestions about this package, feel free to leave a comment or reach out via our GitHub page.
 
 [Github Repository](https://github.com/alparslanakbas/request-response-nuget-package)
+
+A 2.0 preview is also in progress on NuGet if you want to see what's coming next.
 
 We look forward to seeing how you use this middleware to enhance your projects. 😊
 
