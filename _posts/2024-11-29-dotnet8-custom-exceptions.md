@@ -32,7 +32,7 @@ Moreover, in this operation, wouldn't it be misplaced and absurd for the service
 So we should question removing the object check from this code and also making such situations that will cause us to repeat ourselves more central... But how will we do that? The answer: Action Filters, one of the veins of the Asp.NET Core architecture...
 
 ## What exactly is a 'Filter' in Asp.NET Core?
-Filters in Asp.NET Core are one way to run any code before or after certain stages of the request pipeline. In the C# language, these filters are designed as attributes. Although there are many filters in Asp.NET Core, as mentioned above, the filter that will be triggered according to the thrown exception is **ExceptionFilterAttribute**.
+Filters in Asp.NET Core are one way to run any code before or after certain stages of the request pipeline — a narrower-scoped cousin of [middleware](/posts/using-request-response-middleware-and-install-nuget/), which runs for every request instead of specific actions. In the C# language, these filters are designed as attributes. Although there are many filters in Asp.NET Core, as mentioned above, the filter that will be triggered according to the thrown exception is **ExceptionFilterAttribute**.
 Now, let's quickly implement a simple example.
 
 'Product' entity:
@@ -162,6 +162,10 @@ _Error-Test_
 As you can see, we have centralized the control responsibility of the data to be produced in the business logic through a filter and prevented code waste that may arise due to the need in the next actions.
 
 It is also obvious that it is a more professional approach.
+
+## Where This Fits Today
+
+`ExceptionFilterAttribute` still works exactly as shown above — nothing about MVC filters has changed. It's worth knowing where it fits relative to the newer options, though: filters like this one are the right tool when you want exception handling scoped to a specific controller or action (as opposed to the whole app), which the [`IExceptionHandler` interface](/posts/dotnet8-global-error-handling/) introduced in .NET 8 doesn't really give you — that one is app-wide by design. For most "one consistent error shape for the entire API" cases, `IExceptionHandler` plus `ProblemDetails` (covered in that same post) is the better default in .NET 8 and later; reach for a filter like this when you specifically need per-controller behavior instead.
 
 ![Desktop View](/assets/img/posts/thanks-for-reading.webp)
 _Thanks For Reading_
