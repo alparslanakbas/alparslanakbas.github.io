@@ -1,8 +1,12 @@
 ---
 title: What is In-Memory Caching ?
+description: "How in-memory caching works, why it speeds up applications, and the data-consistency risks it introduces across multiple app instances."
 date: 2024-12-17 22:40 +0300
 categories: [Redis, NoSql]
 tags: [Blog, Tutorial, NoSql, Redis, Cache]
+image:
+  path: /assets/img/posts/what-is-in-memory-cache/cover.webp
+  alt: 'Title card: What is In-Memory Caching?'
 ---
 
 ## Introduction

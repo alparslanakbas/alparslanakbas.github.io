@@ -1,8 +1,12 @@
 ---
 title: Asp.NET Core 8 – Global Error Handling
+description: "Comparing global error handling approaches in ASP.NET Core 8: custom middleware versus the built-in IExceptionHandler interface, with examples."
 date: 2024-11-30 22:05 +0300
 categories: [AspNetCore, Dotnet8]
 tags: [Blog, Tutorial, AspNetCore, Dotnet8, ErrorHandler]
+image:
+  path: /assets/img/posts/dotnet8-global-error-handling/cover.webp
+  alt: 'Title card: Asp.NET Core 8 - Global Error Handling'
 ---
 
 ## Introduction

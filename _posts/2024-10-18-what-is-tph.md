@@ -1,8 +1,12 @@
 ---
 title: What does mean TPH ? (Table Per Hierarchy)
+description: "An introduction to Table Per Hierarchy (TPH) in Entity Framework Core: how it maps class inheritance to a single table, plus its trade-offs."
 date: 2024-10-18 19:38 +0300
 categories: [AspNetCore, EntityFramework]
 tags: [Blog, Tutorial, Orm, AspNetCore, Dotnet8, EF]
+image:
+  path: /assets/img/posts/what-is-tph/cover.webp
+  alt: 'Title card: What does mean TPH? (Table Per Hierarchy)'
 ---
 
 ## Table Per Hierarchy (TPH): A Database Inheritance Strategy
