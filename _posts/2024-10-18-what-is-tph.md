@@ -12,7 +12,7 @@ image:
 ## Table Per Hierarchy (TPH): A Database Inheritance Strategy
 Table Per Hierarchy (TPH) is one of the popular strategies used to map inheritance relationships from object-oriented programming to the database. TPH is frequently used in Object-Relational Mapping (ORM) tools like Entity Framework, allowing all entities in an inheritance hierarchy to be stored in a single database table.
 
-In this post, we’ll explore what TPH is, how it works, its pros and cons, and we’ll also look at an example scenario to see how TPH can be implemented. We will also assess TPH from a performance standpoint, which is essential when working with large datasets.
+In this post, we'll explore what TPH is, how it works, its pros and cons, and we'll also look at an example scenario to see how TPH can be implemented. We will also assess TPH from a performance standpoint, which is essential when working with large datasets. If you want to try the example below without standing up a real database first, EF Core's [in-memory provider](/posts/working-with-in-memory/) works fine for prototyping a hierarchy like this.
 
 
 ## What is TPH?
@@ -91,6 +91,8 @@ This will configure Entity Framework to store Book and ElectronicProduct entitie
 
 ## Conclusion
 TPH is a powerful inheritance mapping strategy when you need to keep your database schema simple. It works well for smaller projects or scenarios where the inheritance hierarchy is not too complex. However, as the project grows, you may encounter performance bottlenecks or challenges related to handling null values. Therefore, while TPH is an attractive choice for simple inheritance relationships, you should carefully assess its trade-offs and evaluate if it fits your long-term needs.
+
+Everything above is still accurate on current EF Core — TPH itself hasn't changed. If you're weighing it against the alternatives, EF Core also supports Table-Per-Type (TPT, a table per class with joins) and Table-Per-Concrete-Type (TPC, no shared table at all) mapping strategies, and complex types (reintroduced in EF Core 8) as a non-inheritance way to group related properties. TPH remains the fastest of the three for reads, precisely because it avoids the joins the other two require — that's the trade-off worth remembering the nulls for. It's also a useful contrast to how a schema-less store like [Redis](/posts/redis-data-types/) handles "different shapes of data" — no discriminator column needed when there's no fixed schema to begin with.
 <hr>
 I hope this helps you understand how to implement Table Per Hierarchy (TPH) in your projects.
 

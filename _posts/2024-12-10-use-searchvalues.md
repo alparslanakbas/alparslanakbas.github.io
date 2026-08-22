@@ -32,17 +32,24 @@ _names.ForEach(name => Console.WriteLine(name));
 
 It offers one of the fastest ways to search for multiple specific values within a collection. When first introduced in .NET 8, it only supported char and byte arrays, but with .NET 9, its capabilities have been expanded to support string arrays as well.
 
-This feature proves especially effective in scenarios where conditions are evaluated on collections, such as during LINQ and EF Core querying processes, as demonstrated below:
+This feature proves especially effective in in-memory LINQ filtering — searching a `List<T>` or array you already have loaded, like the first example above.
+
+**One important caveat if you're reaching for this in an [EF Core](/posts/working-with-in-memory/) query:** `SearchValues<T>` is a purely in-memory, client-side API — it has no SQL translation. If you write `context.Roles.Where(r => _roles.Contains(r.Name))` against a real database provider, EF Core will either throw a "could not be translated" exception or (on older EF Core versions) silently fall back to slow client-side evaluation, pulling every row into memory before filtering. `SearchValues` only makes sense once the data is already in memory:
+
 ```csharp
 using System.Buffers;
  
 SearchValues<string> _roles = SearchValues.Create(["Admin", "Moderator"], StringComparison.OrdinalIgnoreCase);
  
-var roles = context.Roles.Where(r => _roles
-                            .Contains(r.Name))
-                         .ToList();
+var roles = context.Roles
+    .AsEnumerable() // materialize first - SearchValues can't be translated to SQL
+    .Where(r => _roles.Contains(r.Name))
+    .ToList();
 ```
+
 Additionally, as seen in the example above, the **SearchValues** class is accessed from the System.Buffers namespace.
+
+Nothing about the API has changed since .NET 9 added string support — it's the same `SearchValues.Create` shown above on .NET 10 today. It's the same kind of narrowly-scoped, purpose-built performance win as the [rate limiting middleware](/posts/dotnet7-how-to-use-rate-limitter/) covered in an earlier post: not something you reach for by default, but worth knowing exists for the specific case it solves.
 
 See you in my upcoming articles, and happy coding..
 
