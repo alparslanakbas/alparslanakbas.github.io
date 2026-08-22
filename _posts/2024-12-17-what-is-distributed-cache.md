@@ -19,7 +19,7 @@ Following up on the [introduction to caching](/posts/what-is-caching/), we will 
 ## What is Distributed Caching?
 Distributed caching involves storing cached data in a completely separate cache service rather than the memory of the servers running the application.
 
-![Desktop View](/assets/img/posts/what-is-distributed-cache.png)
+![Desktop View](/assets/img/posts/what-is-distributed-cache.webp)
 _Distributed Cache_
 
 As mentioned in our previous article titled **[What is In-Memory Caching?](/posts/what-is-in-memory-cache/)**, when using the memory of application servers as cache storage, it is essential to centralize these caches to prevent data inconsistency. Distributed caching, as shown in the accompanying diagram, enables instances of an application running on different servers to access a shared cache. This ensures that every user request receives the same data regardless of which instance processes the request, thereby maintaining data consistency.

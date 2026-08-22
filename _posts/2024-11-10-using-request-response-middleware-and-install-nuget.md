@@ -16,7 +16,7 @@ Hello, in this blog post, we will explain step-by-step how to use our newly rele
 
 RequestResponse Middleware is a library that allows detailed logging of HTTP requests and responses in ASP.NET Core applications. It provides developers with a powerful tool to monitor the performance of their applications, debug issues, and analyze system events more efficiently. This middleware collects detailed information about HTTP requests and responses and can be configured to log these or handle them with a custom handler — a similar idea to [global error handling](/posts/dotnet8-global-error-handling/), just for logging instead of exceptions: one place that sees every request instead of instrumenting each endpoint by hand.
 
-![Desktop View](/assets/img/posts/request-with-middleware.PNG)
+![Desktop View](/assets/img/posts/request-with-middleware.webp)
 _Road-Map_
 
 ## Getting Started

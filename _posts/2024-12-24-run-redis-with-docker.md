@@ -28,7 +28,7 @@ Next, let's run Redis with the command below:
 ```bash
 docker exec -it rediscontainer redis-cli
 ```
-![Desktop View](/assets/img/posts/redis-1.PNG)
+![Desktop View](/assets/img/posts/redis-1.webp)
 _Redis Working_
 
 As you can see in the image, Redis is now running. Let's store a message in it:
@@ -40,7 +40,7 @@ After receiving the "OK" response, let's retrieve the message:
 get test
 ```
 
-![Desktop View](/assets/img/posts/redis-get-message.PNG)
+![Desktop View](/assets/img/posts/redis-get-message.webp)
 _Redis Working_
 
 That's it. As you can see, Redis is working. I hope this is helpful.

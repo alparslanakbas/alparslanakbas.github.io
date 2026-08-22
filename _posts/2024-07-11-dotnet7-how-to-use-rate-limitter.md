@@ -15,7 +15,7 @@ In computer networking, rate limiting is a technique used to control the rate at
 
 ASP.NET Core got a first-party rate limiting middleware in .NET 7 (`Microsoft.AspNetCore.RateLimiting`), and the API has stayed stable through .NET 8, 9, and 10 — no breaking changes, just a few additions along the way (built-in metrics, mainly). Everything in this post still applies if you're on .NET 10 today.
 
-![Desktop View](/assets/img/posts/rate-limitter-schema.jpeg)
+![Desktop View](/assets/img/posts/rate-limitter-schema.webp)
 _Rate limiter schema_
 
 ## Rate Limiter Algorithms
