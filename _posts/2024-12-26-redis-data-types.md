@@ -13,7 +13,7 @@ image:
 
 Hello,
  
-In this content, we will examine the Redis data types, which are one of the most important features that increase the preferability of Redis.
+In this content, we will examine the Redis data types, which are one of the most important features that increase the preferability of Redis. If you don't have a [Redis server running yet](/posts/run-redis-with-docker/), start there first — everything below assumes you can already connect with `redis-cli`.
 
 Redis is a rich database in terms of data types. The general feature of these data types, which we will examine shortly, is that they can be stored in key-value format up to a maximum of 512 MB. Now let's take a look at the data types.
 
@@ -317,7 +317,9 @@ These examples show how **Hashes** are useful for:
 * Shopping carts
 * Object caching
 
-I hope these data types are useful to you..
+These five — String, List, Set, Sorted Set, and Hash — are Redis's original, core data types, and they cover the vast majority of real use cases. Since Redis 8, a few more types that used to be a separate paid add-on (Redis Stack) — JSON documents, Time Series, and probabilistic types like Bloom filters — now ship as part of core, open-source Redis. Worth knowing they exist if a use case doesn't fit neatly into the five above, though they're outside the scope of this post.
+
+I hope these data types are useful to you.. Next: a look at [RedisInsight](/posts/redis-databases/), a GUI for browsing everything you just learned to create.
 
 ![Desktop View](/assets/img/posts/thanks-for-reading.webp)
 _Thanks For Reading_

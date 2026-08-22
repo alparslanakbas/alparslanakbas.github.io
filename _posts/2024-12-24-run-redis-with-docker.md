@@ -20,7 +20,7 @@ In PowerShell, execute the following command:
 ```bash
 docker run --rm -p 6379:6379 --name rediscontainer -d redis
 ```
-If the redis image is not available on your Docker platform, it will automatically be pulled from the Docker Hub Registry. Redis, which will be running on port 6379 inside the container, will be accessible externally through port 6373.
+If the redis image is not available on your Docker platform, it will automatically be pulled from the Docker Hub Registry. Redis, which will be running on port 6379 inside the container, will be accessible externally through port 6379 as well, thanks to the `-p 6379:6379` port mapping.
 
 Next, let's run Redis with the command below:
 ```bash
@@ -42,6 +42,10 @@ get test
 _Redis Working_
 
 That's it. As you can see, Redis is working. I hope this is helpful.
+
+If you'd rather run [Valkey](https://valkey.io/) — the open-source fork mentioned in the [licensing section](/posts/what-is-redis/#licensing) of the previous post — the process is identical, just swap the image: `docker run --rm -p 6379:6379 --name valkeycontainer -d valkey/valkey`. The `redis-cli` commands below work exactly the same either way, since Valkey is protocol-compatible with Redis.
+
+Now that you have a running server, the [next post](/posts/redis-data-types/) covers the actual data types you can store in it — strings, lists, sets, sorted sets, and hashes.
 
 ![Desktop View](/assets/img/posts/thanks-for-reading.webp)
 _Thanks For Reading_
