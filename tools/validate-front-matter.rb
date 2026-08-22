@@ -10,7 +10,16 @@
 require "yaml"
 require "date"
 
-POSTS_DIR = File.join(__dir__, "..", "_posts")
+# Resolved from Dir.pwd rather than __dir__/__FILE__ on purpose: on this
+# Windows setup, a repo path containing non-ASCII characters (e.g. this
+# user's "Masaüstü") comes back from __dir__ mangled into IBM857 with
+# literal "?" bytes replacing the accented characters. Dir.glob happens
+# to still match by accident (glob treats "?" as a single-char wildcard,
+# which coincidentally lines up), but File.read/File.write on such a
+# path fail outright with Errno::EINVAL. Dir.pwd is unaffected — this
+# script (like everything else in tools/ and bin/) is meant to be run
+# from the repo root anyway, so this is not a behavior change.
+POSTS_DIR = File.join(Dir.pwd, "_posts")
 
 CATEGORY_TREE = {
   ".NET" => ["ASP.NET Core", "Entity Framework", "C# Language", "Performance"],
