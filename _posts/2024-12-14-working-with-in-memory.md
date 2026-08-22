@@ -12,7 +12,7 @@ image:
 ## Introduction
 Hello,
 
-In daily life, when learning or implementing a new technology, structure, or method—or even when promoting a product you're developing—if your project requires a database and you're using **Entity Framework Core** as your **ORM**, you likely know how costly it can be to set up an actual database and establish the necessary connections. In such scenarios, Entity Framework Core provides **In-Memory** database support, allowing you to perform operations identical to those on a physical database but without the overhead. This lets you focus on your work more efficiently. Let’s explore how to use this feature.
+In daily life, when learning or implementing a new technology, structure, or method—or even when promoting a product you're developing—if your project requires a database and you're using **Entity Framework Core** as your **ORM**, you likely know how costly it can be to set up an actual database and establish the necessary connections. In such scenarios, Entity Framework Core provides **In-Memory** database support, allowing you to perform operations identical to those on a physical database but without the overhead. This lets you focus on your work more efficiently. Let's explore how to use this feature — and if inheritance mapping is what actually brought you here, the [TPH post](/posts/what-is-tph/) uses this exact provider to keep its examples runnable without a real database.
 
 
 ## Let's starting
@@ -30,11 +30,10 @@ After conducting rapid tests on a database designed in-memory, once it is determ
 
 ### Library Installation
 
-To work with in-memory databases using **Entity Framework Core**, you need to install
+To work with in-memory databases using **Entity Framework Core**, install the provider package:
 ```bash
-Microsoft.EntityFrameworkCore.InMemory
+dotnet add package Microsoft.EntityFrameworkCore.InMemory
 ```
-libraries in your project.
 
 ### Example Implementation
 
@@ -65,19 +64,38 @@ Then, design the context class as follows.
 ```csharp
 class Context : DbContext
 {
+    public Context() { }
+    public Context(DbContextOptions<Context> options) : base(options) { }
+
     public DbSet<Employee> Employees { get; set; }
     public DbSet<Customer> Customers { get; set; }
  
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseInMemoryDatabase("InMemoryDb");
+        if (!optionsBuilder.IsConfigured)
+            optionsBuilder.UseInMemoryDatabase("InMemoryDb");
     }
 }
 ```
 
-The key point to note here is the **UseInMemoryDatabase** function on line 8. This function informs the context that it will store data in memory.
+The key point to note here is the **UseInMemoryDatabase** call inside `OnConfiguring`. This informs the context that it will store data in memory instead of connecting to a real database.
 
 Thus, we have provided an in-memory database for testing purposes and reduced the extra overhead in our work.
+
+## A More Common Pattern: Swapping It In for Tests
+
+Hardcoding the provider inside `OnConfiguring` works for a quick demo, but it means your context can *only* ever run in-memory — not what you want if the same `DbContext` also needs to run against a real database in production. The more common approach is to leave the context provider-agnostic and configure it through dependency injection instead, so a test project can swap in the in-memory provider without touching the context class at all:
+
+```csharp
+// In your test project's setup:
+var options = new DbContextOptionsBuilder<Context>()
+    .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
+    .Options;
+
+using var context = new Context(options);
+```
+
+Using `Guid.NewGuid()` as the database name gives each test its own isolated in-memory database, so tests don't leak state into each other when they run in parallel — a real gotcha if you reuse the same database name across a test suite and wonder why one test's leftover data is breaking another.
 
 See you in my upcoming articles, and happy coding..
 
