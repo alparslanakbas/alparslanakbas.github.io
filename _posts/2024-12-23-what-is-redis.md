@@ -1,8 +1,12 @@
 ---
 title: What is Redis And Use Cases?
+description: "An introduction to Redis: what makes this in-memory NoSQL store fast, how it persists data, and its common use cases like caching and queues."
 date: 2024-12-23 23:25 +0300
 categories: [Redis, NoSql]
 tags: [Blog, Tutorial, NoSql, Redis, Cache]
+image:
+  path: /assets/img/posts/what-is-redis/cover.webp
+  alt: 'Title card: What is Redis And Use Cases?'
 ---
 
 ## What is Redis ?

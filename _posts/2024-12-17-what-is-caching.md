@@ -1,8 +1,12 @@
 ---
 title: Introduction to Caching Enhancing Performance and Reducing Costs
+description: "An introduction to caching in software applications: why it matters, when to use it, and the difference between local and distributed caching."
 date: 2024-12-17 22:15 +0300
 categories: [Redis, NoSql]
 tags: [Blog, Tutorial, NoSql, Redis, Cache]
+image:
+  path: /assets/img/posts/what-is-caching/cover.webp
+  alt: 'Title card: Introduction to Caching'
 ---
 
 ## Introduction

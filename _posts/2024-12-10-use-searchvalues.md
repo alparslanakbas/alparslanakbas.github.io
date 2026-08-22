@@ -1,8 +1,12 @@
 ---
 title: Improving Array Search Performance with SearchValues
+description: "An overview of .NET's SearchValues class and how its vectorized, hardware-accelerated lookups speed up searching arrays for multiple values."
 date: 2024-12-10 19:00 +0300
 categories: [AspNetCore, Dotnet9]
 tags: [Blog, Tutorial, AspNetCore, Dotnet8, Dotnet9, Array]
+image:
+  path: /assets/img/posts/use-searchvalues/cover.webp
+  alt: 'Title card: Improving Array Search Performance with SearchValues'
 ---
 ## Introduction
 Hello,
