@@ -28,7 +28,7 @@ A lightweight generic repository pattern implementation for .NET with Entity Fra
 
 ## ReqMint
 
-A Postman-style HTTP client, built from scratch in .NET. Work in progress.
+An HTTP client built from scratch in .NET — designing it to be fast and unfussy rather than bolting features onto a bloated UI. Actively in development.
 
 [Source](https://github.com/alparslanakbas/ReqMint)
 
