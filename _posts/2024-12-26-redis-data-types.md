@@ -9,6 +9,7 @@ series_order: 6
 image:
   path: /assets/img/posts/redis-data-types/cover.webp
   alt: 'Title card: Redis Data Types'
+  lqip: "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAgCdASoYAA0APu1kqU4ppaOiMAgBMB2JZQAAg8QFYAD+78iLmXpwy8fl86QdwBUNuR74KcoLSG2xGznpJKSWMQl4hXvYdF/vR4AA"
 ---
 
 ## Introduction

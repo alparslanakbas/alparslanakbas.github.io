@@ -9,6 +9,7 @@ series_order: 1
 image:
   path: /assets/img/posts/dotnet8-custom-exceptions/cover.webp
   alt: 'Title card: Asp.NET Core 8 Automatically Handle Exceptions'
+  lqip: "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAABwAwCdASoYAA0APu1kqk4ppaQiMAgBMB2JZQAAWpRiXw9MB1AA/uwRiCRtUcoUJE87XV8nrcq8TTlUTahYVTsr5gSDyMMs4aCR1KD9ByYAAA=="
 ---
 
 ## Introduction

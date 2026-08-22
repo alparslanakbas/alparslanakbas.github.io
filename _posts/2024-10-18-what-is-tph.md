@@ -7,6 +7,7 @@ tags: [aspnet-core, dotnet-8, entity-framework, orm]
 image:
   path: /assets/img/posts/what-is-tph/cover.webp
   alt: 'Title card: What does mean TPH? (Table Per Hierarchy)'
+  lqip: "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACQAwCdASoYAA0APu1iqU2ppaQiMAgBMB2JZQAAWpcmygMAWxwAAP7sEYgkbVHKEyNe+2tq5AO9gKyWSyytiNN7fRQMzIpveCNhuNqml73sQS3Xf3qSYAAA"
 ---
 
 ## Table Per Hierarchy (TPH): A Database Inheritance Strategy

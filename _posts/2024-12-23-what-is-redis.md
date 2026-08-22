@@ -9,6 +9,7 @@ series_order: 4
 image:
   path: /assets/img/posts/what-is-redis/cover.webp
   alt: 'Title card: What is Redis And Use Cases?'
+  lqip: "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAwCdASoYAA0APu1iqU2ppaQiMAgBMB2JZQAAWqFFJ/HP/q6kAAD+7BGIJG1RyaPBMZAXvVubRiNN6yMZiS9ZLkjRat90grv/H96kmAA="
 ---
 
 ## What is Redis ?

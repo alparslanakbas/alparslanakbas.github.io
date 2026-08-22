@@ -9,6 +9,7 @@ series_order: 5
 image:
   path: /assets/img/posts/run-redis-with-docker/cover.webp
   alt: 'Title card: Starting a Redis Server with a Docker Container'
+  lqip: "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAABwAwCdASoYAA0APu1kqk4ppaQiMAgBMB2JZQAAWpcmygAWhQAA/uwRiCRtUcoTIuljA2FJG93CXXcZUqYjTe4OA7nWKCO/W+qs6UhvBI6lB+g5MAA="
 ---
 
 ## Why Docker Container ?

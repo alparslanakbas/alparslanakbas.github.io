@@ -7,6 +7,7 @@ tags: [entity-framework, in-memory-database, testing]
 image:
   path: /assets/img/posts/working-with-in-memory/cover.webp
   alt: 'Title card: Working with In-Memory Database Using Entity Framework Core'
+  lqip: "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACQAwCdASoYAA0APu1kq04ppaQiMAgBMB2JZQAAWpgEFP6iVluAAP7sEYgkbVHKEyLpTmARihIeAK2oyX82I03uEv7fr8K9jBy7dZd/Q5R8q04C/cmEAAAA"
 ---
 
 ## Introduction

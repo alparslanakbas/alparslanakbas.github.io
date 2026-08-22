@@ -7,6 +7,7 @@ tags: [dotnet-8, dotnet-9, performance, arrays]
 image:
   path: /assets/img/posts/use-searchvalues/cover.webp
   alt: 'Title card: Improving Array Search Performance with SearchValues'
+  lqip: "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACwAwCdASoYAA0APu1kqU4ppaOiMAgBMB2JZQAAWpgq7feakeXO8AD+7BGIJG1RyhMceKhJTwVBaZBN0xNqFhUEVZYStst0p90gJf3JhAAAAA=="
 ---
 ## Introduction
 Hello,

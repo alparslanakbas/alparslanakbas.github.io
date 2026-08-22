@@ -9,6 +9,7 @@ series_order: 1
 image:
   path: /assets/img/posts/what-is-caching/cover.webp
   alt: 'Title card: Introduction to Caching'
+  lqip: "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACQAwCdASoYAA0APu1oqk6ppiQiMAgBMB2JZQAAWpgEFP0qiC1kAP7sEYgkbVHKExx4p/+8twyfCbOoIVp1qoRaZFqPNKQp1eBWfcmEAAA="
 ---
 
 ## Introduction

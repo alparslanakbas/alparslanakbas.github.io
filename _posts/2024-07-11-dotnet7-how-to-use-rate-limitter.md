@@ -7,6 +7,7 @@ tags: [aspnet-core, dotnet-7, rate-limiting, middleware, partitioning]
 image:
   path: /assets/img/posts/dotnet7-how-to-use-rate-limitter/cover.webp
   alt: 'Title card: Rate Limiting in .NET'
+  lqip: "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwAwCdASoYAA0APu1mqk2ppaQiMAgBMB2JZQAAWpgq8Wrz40wigAD+7BGIJG1RyhMi6Unn9NUx5da0MScTahYQHTKYKWM3fJ30U3eDyc1l1EXLH+hnjAAA"
 ---
 
 ## What is Rate Limiting?
