@@ -7,6 +7,7 @@ tags: [aspnet-core, dotnet-8, middleware, logging, nuget]
 image:
   path: /assets/img/posts/using-file-logger-middleware-and-install-nuget/cover.webp
   alt: 'Title card: What is File Logger Middleware And How is Install?'
+  lqip: "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABQAwCdASoYAA0APu1iqU2ppaOiMAgBMB2JZQAAg8SROalgAAD+715YGl0el1My8fl865Bzq/ayn+maTr3g0vrq0OSbY3CfYMrRhluaUE/Z7g8RTx26iP+kDsAAAA=="
 ---
 
 ## Introduction

@@ -7,6 +7,7 @@ tags: [jekyll, github-pages, blogging, custom-domain]
 image:
   path: /assets/img/posts/how-to-build-personel-web-blog-site/cover.webp
   alt: 'Title card: Starting A Blog Hosted On Github Pages'
+  lqip: "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAABQAwCdASoYAA0APu1iqU2ppaOiMAgBMB2JZQAAWo6r2+2MYAD+7BGIJG1RyhQfceGIxMp+E3oDvdMzsTahYWr3NJgLY++bWpI2ahyF/fyGmf71JMAAAA=="
 ---
 
 ## My First Ever Blog Post

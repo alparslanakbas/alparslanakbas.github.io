@@ -7,6 +7,7 @@ tags: [dotnet-7, docker, containers, aspnet-core]
 image:
   path: /assets/img/posts/built-in-container-support-in-net/cover.webp
   alt: 'Title card: Built-In Container Support in .NET'
+  lqip: "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACQAwCdASoYAA0APu1iqU2ppaQiMAgBMB2JZQAAWph700DxGeJgAP7sEYgkbVHHOD0zK2ThNQwmJEPCoQC0LL7Eab25IqiUqpFJK3okFcychmsL/x/epJgA"
 ---
 
 ## Introduction

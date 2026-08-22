@@ -9,6 +9,7 @@ series_order: 2
 image:
   path: /assets/img/posts/what-is-in-memory-cache/cover.webp
   alt: 'Title card: What is In-Memory Caching?'
+  lqip: "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACwAwCdASoYAA0APu1iqU2ppaQiMAgBMB2JZQAAWqFFJ/HPRfJPgAD+7BGIJG1RyaPBMZCrmRUwIX3ZdiNN6xZKHpoxmtYU6tIX9/IaZ/vUkwAA"
 ---
 
 ## Introduction

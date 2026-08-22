@@ -7,6 +7,7 @@ tags: [aspnet-core, dotnet-8, middleware, nuget]
 image:
   path: /assets/img/posts/using-request-response-middleware-and-install-nuget/cover.webp
   alt: 'Title card: What is Request Response Middleware And How is Install?'
+  lqip: "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACwAwCdASoYAA0APu1kqU2ppaQiMAgBMB2JZQAAWpgEvVT/K3s8AAD+7BGIJG1RyT2etIKAMG02B2l4E2oWEgvQsoTAZzM7Hv/ImCqD7cf3qSYA"
 ---
 
 ## Using RequestResponse Middleware and Testing Methods

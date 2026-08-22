@@ -9,6 +9,7 @@ series_order: 2
 image:
   path: /assets/img/posts/dotnet8-global-error-handling/cover.webp
   alt: 'Title card: Asp.NET Core 8 - Global Error Handling'
+  lqip: "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAQAwCdASoYAA0APu1kqU2ppaOiMAgBMB2JZQAAWpcmzMAA/uwRiCRtUcoUJE9JwHoggsSiFLDYWPNgCbWJn/kc5/idSLDlsBmHW987A+Q6y6iLlj/0gdgA"
 ---
 
 ## Introduction

@@ -9,6 +9,7 @@ series_order: 7
 image:
   path: /assets/img/posts/redis-databases/cover.webp
   alt: 'Title card: What is Redis Databases?'
+  lqip: "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACQAwCdASoYAA0APu1kqU4ppaOiMAgBMB2JZQAAWpcmygA3Ce0wAP7sEYgkbVHKYMKjnPkgjfBV5iNN7g9gXF3aDm44uDGVCKeMI/QcmAA="
 ---
 
 ## Introduction

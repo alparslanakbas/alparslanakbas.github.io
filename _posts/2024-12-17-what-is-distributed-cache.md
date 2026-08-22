@@ -9,6 +9,7 @@ series_order: 3
 image:
   path: /assets/img/posts/what-is-distributed-cache/cover.webp
   alt: 'Title card: What is Distributed Caching?'
+  lqip: "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAwCdASoYAA0APu1kqU2ppaQiMAgBMB2JZQAAWqFFJ/HPRaY/8AAA/uwRiCRtUcmjwTGQF7hHI37Eab1zQG0mzQ9U+KBes5rLqIuWP/SB2AAA"
 ---
 
 ## Introduction
