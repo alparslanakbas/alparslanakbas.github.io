@@ -2,8 +2,8 @@
 title: Starting A Blog Hosted On Github Pages
 description: "A practical walkthrough for launching a free developer blog on GitHub Pages with Jekyll and the Chirpy theme, including custom domain setup."
 date: 2024-07-09 22:37 +0300
-categories: [Ruby, Jekyll]
-tags: [Blog, Tutorial, Ruby, Jekyll, Github]
+categories: [Meta, Blogging]
+tags: [jekyll, github-pages, blogging, custom-domain]
 image:
   path: /assets/img/posts/how-to-build-personel-web-blog-site/cover.webp
   alt: 'Title card: Starting A Blog Hosted On Github Pages'

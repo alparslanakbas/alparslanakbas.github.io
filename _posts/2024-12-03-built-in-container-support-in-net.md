@@ -2,8 +2,8 @@
 title: Built-In Container Support in .NET – Dockerizing .NET Applications Without a Dockerfile
 description: "How to containerize a .NET application straight from the SDK using dotnet publish, without writing or maintaining a Dockerfile."
 date: 2024-12-03 20:00 +0300
-categories: [AspNetCore, Dotnet7]
-tags: [Blog, Tutorial, AspNetCore, Dotnet7, Docker]
+categories: [DevOps, Docker]
+tags: [dotnet-7, docker, containers, aspnet-core]
 image:
   path: /assets/img/posts/built-in-container-support-in-net/cover.webp
   alt: 'Title card: Built-In Container Support in .NET'

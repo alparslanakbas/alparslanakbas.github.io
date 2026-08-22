@@ -2,8 +2,8 @@
 title: Rate Limiting in .NET An Essential Tool for Network Traffic Management
 description: "A hands-on guide to ASP.NET Core's built-in rate limiting middleware, covering fixed window, sliding window, token bucket, and concurrency limiters."
 date: 2024-07-11 20:40 +0300
-categories: [AspNetCore, Dotnet7]
-tags: [Blog, Tutorial, Rate-Limitter, AspNetCore, Dotnet7]
+categories: [.NET, ASP.NET Core]
+tags: [aspnet-core, dotnet-7, rate-limiting, middleware]
 image:
   path: /assets/img/posts/dotnet7-how-to-use-rate-limitter/cover.webp
   alt: 'Title card: Rate Limiting in .NET'

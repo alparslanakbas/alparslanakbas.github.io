@@ -2,8 +2,8 @@
 title: Asp.NET Core 8 Automatically Handle Exceptions
 description: "Using ASP.NET Core's ExceptionFilterAttribute to centralize error handling, turning custom exceptions into consistent API responses automatically."
 date: 2024-11-30 21:40 +0300
-categories: [AspNetCore, Dotnet8]
-tags: [Blog, Tutorial, AspNetCore, Dotnet8]
+categories: [.NET, ASP.NET Core]
+tags: [aspnet-core, dotnet-8, exception-handling, filters]
 image:
   path: /assets/img/posts/dotnet8-custom-exceptions/cover.webp
   alt: 'Title card: Asp.NET Core 8 Automatically Handle Exceptions'
