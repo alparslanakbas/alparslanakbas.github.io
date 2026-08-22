@@ -4,6 +4,8 @@ description: "Using ASP.NET Core's ExceptionFilterAttribute to centralize error 
 date: 2024-11-30 21:40 +0300
 categories: [.NET, ASP.NET Core]
 tags: [aspnet-core, dotnet-8, exception-handling, filters]
+series: "ASP.NET Core Error Handling"
+series_order: 1
 image:
   path: /assets/img/posts/dotnet8-custom-exceptions/cover.webp
   alt: 'Title card: Asp.NET Core 8 Automatically Handle Exceptions'

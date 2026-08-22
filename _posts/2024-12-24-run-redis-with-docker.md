@@ -4,6 +4,8 @@ description: "A quick guide to running a Redis server locally in a Docker contai
 date: 2024-12-24 01:25 +0300
 categories: [Data, Redis]
 tags: [redis, docker, nosql]
+series: "Caching & Redis"
+series_order: 5
 image:
   path: /assets/img/posts/run-redis-with-docker/cover.webp
   alt: 'Title card: Starting a Redis Server with a Docker Container'

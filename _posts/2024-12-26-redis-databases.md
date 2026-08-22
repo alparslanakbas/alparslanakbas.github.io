@@ -4,6 +4,8 @@ description: "An introduction to RedisInsight (Redis Databases), a graphical too
 date: 2024-12-26 00:23 +0300
 categories: [Data, Redis]
 tags: [redis, redisinsight, nosql]
+series: "Caching & Redis"
+series_order: 7
 image:
   path: /assets/img/posts/redis-databases/cover.webp
   alt: 'Title card: What is Redis Databases?'

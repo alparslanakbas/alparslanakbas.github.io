@@ -1,0 +1,25 @@
+<!-- Series navigation: lists every post that shares this post's `series` front matter value, in `series_order`. No-op if `page.series` isn't set. -->
+
+{% if page.series %}
+  {% assign series_posts = site.posts | where: "series", page.series | sort: "series_order" %}
+  {% if series_posts.size > 1 %}
+    <aside id="series-nav" aria-labelledby="series-nav-label" class="mb-4">
+      <h3 class="mb-3" id="series-nav-label">
+        <i class="fas fa-list-ol fa-fw me-1"></i>{{ page.series }}
+      </h3>
+      <ol class="ps-3">
+        {% for post in series_posts %}
+          {% if post.url == page.url %}
+            <li class="fw-bold">
+              {{ post.title }}
+              <span class="text-muted fw-normal">&mdash; you are here</span>
+            </li>
+          {% else %}
+            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </aside>
+    <!-- #series-nav -->
+  {% endif %}
+{% endif %}

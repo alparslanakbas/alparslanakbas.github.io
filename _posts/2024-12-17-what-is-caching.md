@@ -4,6 +4,8 @@ description: "An introduction to caching in software applications: why it matter
 date: 2024-12-17 22:15 +0300
 categories: [Data, Caching]
 tags: [caching, redis, performance]
+series: "Caching & Redis"
+series_order: 1
 image:
   path: /assets/img/posts/what-is-caching/cover.webp
   alt: 'Title card: Introduction to Caching'

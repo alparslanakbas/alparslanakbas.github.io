@@ -4,6 +4,8 @@ description: "How in-memory caching works, why it speeds up applications, and th
 date: 2024-12-17 22:40 +0300
 categories: [Data, Caching]
 tags: [caching, in-memory, redis]
+series: "Caching & Redis"
+series_order: 2
 image:
   path: /assets/img/posts/what-is-in-memory-cache/cover.webp
   alt: 'Title card: What is In-Memory Caching?'
