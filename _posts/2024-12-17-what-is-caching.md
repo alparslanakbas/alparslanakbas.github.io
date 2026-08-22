@@ -42,10 +42,10 @@ This caching system is distributed across multiple servers but functions as a un
 
 In our next content, we will provide a detailed explanation of **In-Memory Caching** and its workings.
 
-You can read here **[In-Memory Cache](https://alparslanakbas.github.io/posts/what-is-in-memory-cache/)**
+You can read here **[In-Memory Cache](/posts/what-is-in-memory-cache/)**
 
 
-You can read here **[Distributed Cache](https://alparslanakbas.github.io/posts/what-is-distributed-cache/)**
+You can read here **[Distributed Cache](/posts/what-is-distributed-cache/)**
 
 
 ![Desktop View](/assets/img/posts/thanks-for-reading.webp)

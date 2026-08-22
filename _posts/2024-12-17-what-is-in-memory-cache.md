@@ -12,7 +12,7 @@ image:
 ## Introduction
 Hello,
 
-In the second article of our Redis series, we will discuss what In-Memory Caching is and delve into the necessary details.
+Following up on the [introduction to caching](/posts/what-is-caching/), we will discuss what In-Memory Caching is and delve into the necessary details.
 
 ## What is In-Memory Caching?
 In-Memory Caching is the process of temporarily storing stable data, which is frequently retrieved from the database due to high request rates, in the memory (RAM) of the server hosting the application. This approach is used to minimize the costs associated with database queries and provide faster access to data.
@@ -45,7 +45,7 @@ Another approach is to centralize the cache for all instances. By storing cached
 We’ve thoroughly explored the theory behind what **In-Memory** Caching is.
 In our next content, we will provide a detailed explanation of **Distributed Caching** and its workings.
 
-You can read here **[Distributed Cache](https://alparslanakbas.github.io/posts/what-is-distributed-cache/)**
+You can read here **[Distributed Cache](/posts/what-is-distributed-cache/)**
 
 
 ![Desktop View](/assets/img/posts/thanks-for-reading.webp)
