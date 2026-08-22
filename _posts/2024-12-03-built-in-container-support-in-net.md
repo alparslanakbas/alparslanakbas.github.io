@@ -112,7 +112,7 @@ dotnet publish /t:PublishContainer
 ```
 As a result of this process, if you check your images in Docker, you will see that an image has been created with the name you specified.
 
-![Desktop View](/assets/img/posts/Built-In-Container-Support-in-NET-Dockerizing-NET-Applications-Without-a-Dockerfile-1.png)
+![Desktop View](/assets/img/posts/Built-In-Container-Support-in-NET-Dockerizing-NET-Applications-Without-a-Dockerfile-1.webp)
 _NET-Dockerizing-NET-Applications-Without-a-Dockerfile_
 
 Beyond these options, you can also customize the image to be created using the properties described below:

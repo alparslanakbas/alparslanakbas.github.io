@@ -56,7 +56,7 @@ In this structure, both Book and ElectronicProduct inherit from the Product clas
 Using TPH, we store all the data from the class hierarchy in a single table. The table includes columns for all possible fields, even though only certain rows will use specific columns based on the subclass type.
 Here’s what the table might look like:
 
-![Desktop View](/assets/img/posts/tph-table-view.PNG)
+![Desktop View](/assets/img/posts/tph-table-view.webp)
 _Table-Per Hierarchy_table-view_
 
 In this table:

@@ -155,10 +155,10 @@ That's it... Now all we have to do is test by sending a request to this API.
 ```text
 /api/Products/1 then /api/Products/10
 ```
-![Desktop View](/assets/img/posts/test-api-1.PNG)
+![Desktop View](/assets/img/posts/test-api-1.webp)
 _Success-Test_
 
-![Desktop View](/assets/img/posts/test-api-2.PNG)
+![Desktop View](/assets/img/posts/test-api-2.webp)
 _Error-Test_
 
 As you can see, we have centralized the control responsibility of the data to be produced in the business logic through a filter and prevented code waste that may arise due to the need in the next actions.
