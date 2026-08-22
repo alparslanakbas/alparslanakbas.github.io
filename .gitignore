@@ -1,7 +1,6 @@
 # Bundler cache
 .bundle
 vendor
-Gemfile.lock
 
 # Jekyll cache
 .jekyll-cache
@@ -17,10 +16,21 @@ package-lock.json
 
 # IDE configurations
 .idea
-.vscode
+.vscode/*
 !.vscode/settings.json
 !.vscode/extensions.json
+!.vscode/tasks.json
+
+# OS junk
+*~
+.DS_Store
+Thumbs.db
 
 # Misc
-_sass/dist
+_sass/vendors
 assets/js/dist
+
+# AI assistant working docs - never committed, repo is public.
+# Kept locally / synced via OneDrive across machines instead.
+CLAUDE.md
+docs/ROADMAP.md
