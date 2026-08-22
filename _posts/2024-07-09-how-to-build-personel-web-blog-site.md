@@ -65,11 +65,13 @@ If you face any issues, you can refer to the [Chripy theme's Getting started gui
 
 ## Step 3: Setup Your Custom Root Domain
 
-You need to visit one of the domain name registrar to buy a custom domain. There are multiple registrars to choose from: 
+You need to visit one of the domain name registrars to buy a custom domain. There are multiple registrars to choose from:
 
 * [GoDaddy](https://www.godaddy.com/)
-* [Google Domains](https://domains.google)
-* [Name Cheap](https://www.namecheap.com/)
+* [Namecheap](https://www.namecheap.com/)
+* [Cloudflare Registrar](https://www.cloudflare.com/products/registrar/) — sells domains at cost (no markup), which is unusual among registrars
+
+(Google Domains, which used to be a common recommendation here, shut down in 2024 and migrated all its customers to Squarespace — it's no longer an option for new registrations.)
 
 ### Configure Your Domain
 
@@ -99,3 +101,9 @@ _My Github Pages Custom Domain page_
 ***Best Practice :*** Click on **Enforce HTTPS** to serve your blog via secure SSL connection. Your site will be configured with a free SSL certificate from [Let's Encrypt](https://letsencrypt.org/).
 
 Hope you found this article useful. If you have any questions, you can check my [blog's repo](https://github.com/alparslanakbas/alparslanakbas.github.io) on Github or feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/alparslanakbas/).
+
+## A Quick Update
+
+This post is the oldest one on the blog, and a few things have held up better than others. The Chirpy theme is still here (now a few major versions newer). The custom-domain steps above are still accurate — GitHub's DNS records haven't changed. What did change: I ended up deciding *against* buying a custom domain for this specific blog, sticking with `alparslanakbas.github.io` instead — there's no SEO penalty for staying on a GitHub Pages subdomain, and it was one less thing to maintain. Worth knowing both options are genuinely fine.
+
+If you want to see what came out of following these steps, the [rate limiting post](/posts/dotnet7-how-to-use-rate-limitter/) is a good example of where the writing ended up, and [/projects](/projects/) has what I've actually built since.
