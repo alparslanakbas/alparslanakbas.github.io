@@ -1,6 +1,6 @@
 ---
-title: Rate Limiting in .NET An Essential Tool for Network Traffic Management
-description: "A hands-on guide to ASP.NET Core's rate limiting middleware — the four built-in algorithms, per-client partitioning, custom rejection responses, and a runnable example."
+title: "Rate Limiting in ASP.NET Core: A Practical Guide"
+description: "A hands-on guide to ASP.NET Core's rate limiting middleware — the four built-in algorithms, per-client partitioning, and custom rejection responses."
 date: 2024-07-11 20:40 +0300
 categories: [.NET, ASP.NET Core]
 tags: [aspnet-core, dotnet-7, rate-limiting, middleware, partitioning]

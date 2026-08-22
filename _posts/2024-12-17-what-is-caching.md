@@ -1,5 +1,5 @@
 ---
-title: Introduction to Caching Enhancing Performance and Reducing Costs
+title: "An Introduction to Caching: Boosting Performance"
 description: "An introduction to caching in software applications: why it matters, when to use it, and the difference between local and distributed caching."
 date: 2024-12-17 22:15 +0300
 categories: [Data, Caching]

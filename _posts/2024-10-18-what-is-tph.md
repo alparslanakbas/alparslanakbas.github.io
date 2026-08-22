@@ -29,7 +29,7 @@ Let’s consider an example in an e-commerce system where we manage different ty
 
 <strong>Class Structure for Products</strong>
 
-``` csharp
+```csharp
 public class Product
 {
     public Guid Id { get; set; }
