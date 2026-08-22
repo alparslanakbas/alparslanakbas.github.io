@@ -2,8 +2,8 @@
 title: What is Distributed Caching ?
 description: "What distributed caching is, how it keeps data consistent across multiple application instances, and how it compares to in-memory caching."
 date: 2024-12-17 23:10 +0300
-categories: [Redis, NoSql]
-tags: [Blog, Tutorial, NoSql, Redis, Cache]
+categories: [Data, Caching]
+tags: [caching, distributed-systems, redis]
 image:
   path: /assets/img/posts/what-is-distributed-cache/cover.webp
   alt: 'Title card: What is Distributed Caching?'

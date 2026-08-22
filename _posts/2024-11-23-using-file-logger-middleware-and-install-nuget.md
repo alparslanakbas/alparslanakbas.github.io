@@ -2,8 +2,8 @@
 title: What is File Logger Middleware And How is Install ?
 description: "A guide to the File Logger Middleware NuGet package for persisting ASP.NET Core HTTP request and response logs to disk for easier debugging."
 date: 2024-11-23 22:00 +0300
-categories: [AspNetCore, Nuget]
-tags: [Blog, Tutorial, AspNetCore, Dotnet8, Middleware, Logging]
+categories: [.NET, ASP.NET Core]
+tags: [aspnet-core, dotnet-8, middleware, logging, nuget]
 image:
   path: /assets/img/posts/using-file-logger-middleware-and-install-nuget/cover.webp
   alt: 'Title card: What is File Logger Middleware And How is Install?'
