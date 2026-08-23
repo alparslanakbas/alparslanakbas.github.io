@@ -13,6 +13,7 @@ image:
 ---
 
 ## Why Docker Container ?
+
 When using Chocolatey to install Redis in a Windows environment, we often encounter issues with getting the latest version. However, Docker containers running on a Linux environment provide the advantage of working with the most up-to-date Redis systems. Additionally, Docker eliminates the hassle and space allocation required to install a Redis server on a Windows operating system. Instead, it allows us to launch a Redis server effortlessly using a single image.
 
 ## Starting a Container
@@ -20,23 +21,30 @@ When using Chocolatey to install Redis in a Windows environment, we often encoun
 To run a Redis server inside a container, we will use the image available at **[Redis](https://hub.docker.com/_/redis)**.
 
 In PowerShell, execute the following command:
+
 ```bash
 docker run --rm -p 6379:6379 --name rediscontainer -d redis
 ```
+
 If the redis image is not available on your Docker platform, it will automatically be pulled from the Docker Hub Registry. Redis, which will be running on port 6379 inside the container, will be accessible externally through port 6379 as well, thanks to the `-p 6379:6379` port mapping.
 
 Next, let's run Redis with the command below:
+
 ```bash
 docker exec -it rediscontainer redis-cli
 ```
+
 ![Desktop View](/assets/img/posts/redis-1.webp)
 _Redis Working_
 
 As you can see in the image, Redis is now running. Let's store a message in it:
+
 ```bash
 set test "Redis now working"
 ```
+
 After receiving the "OK" response, let's retrieve the message:
+
 ```bash
 get test
 ```
@@ -52,5 +60,3 @@ Now that you have a running server, the [next post](/posts/redis-data-types/) co
 
 ![Desktop View](/assets/img/posts/thanks-for-reading.webp)
 _Thanks For Reading_
-
-

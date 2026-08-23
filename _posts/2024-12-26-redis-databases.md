@@ -13,18 +13,20 @@ image:
 ---
 
 ## Introduction
+
 Hello,
 I will briefly introduce **RedisInsight**, the official GUI that lets us view and modify real-time data on a Redis server through a graphical interface, instead of typing every command by hand in [`redis-cli`](/posts/run-redis-with-docker/).
 
 ## Download
+
 RedisInsight is 100% free with no signup or trial required — download it directly from **[redis.io/insight](https://redis.io/insight/)** for Windows, macOS, or Linux, or run it as a Docker container if you'd rather not install anything locally.
 
 ## Interface Overview
+
 After downloading and installing Redis Databases, simply click the "Add Redis Database" button to connect to the Redis server where the data will be visualized. Once you enter your information as shown in the image, you can test the connection using "Test Connection." When it says "Test Successful" at the bottom right, the addition process is complete.
 
 ![Desktop View](/assets/img/posts/redis-desktop.webp)
 _Redis Databases_
-
 
 ## Let's Test It
 

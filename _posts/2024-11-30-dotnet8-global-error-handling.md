@@ -13,6 +13,7 @@ image:
 ---
 
 ## Introduction
+
 Hello,
 
 No matter how carefully and securely we design our applications, errors—often a natural part of software operation—will inevitably occur. This is especially true for web applications, where such situations can be considered almost unavoidable. However, in a good software development process, the number of potential errors can be minimized, and applications can be made more robust and reliable through proper testing strategies and a fault-tolerant coding approach.
@@ -26,6 +27,7 @@ At the same time, we will focus on advancing the process to its most ideal state
 In our previous article titled "[Automatically Manage Exceptions in ASP.NET Core](/posts/dotnet8-custom-exceptions/)", we explored and experienced the most effective method among those we can apply for achieving this ideal state.
 
 ## Let's Starting
+
 Alternatively, we can adopt an approach to handle all potential errors in the process by using a middleware like the one below.
 
 ```csharp
@@ -99,6 +101,7 @@ public class ExceptionHandler(ILogger<ExceptionHandler> logger) : IExceptionHand
 This interface, as seen in the code block above, enforces the implementation of the TryHandleAsync method. It returns a boolean value: true if a handle exists for the potential error, or false otherwise.
 
 To include this custom exception handler class in the ASP.NET Core request pipeline, the following configuration is sufficient:
+
 ```csharp
 var builder = WebApplication.CreateBuilder(args);
  
@@ -122,6 +125,7 @@ app.Run();
 As seen, on line 5, we use the AddExceptionHandler method to add the relevant service as a dependency to the application. On line 6, we include the AddProblemDetails service to generate a response with details about potential errors. Finally, on line 10, we activate the ExceptionHandlerMiddleware by invoking the UseExceptionHandler middleware.
 
 When we compile and run the application in this state, we can observe that the exception handler class operates during potential error scenarios, as shown below:
+
 ```json
 {
     "title": "Server Error",
@@ -129,7 +133,9 @@ When we compile and run the application in this state, we can observe that the e
     "Message": "An error occurred. Error message: bla bla bla errorr..."
 }
 ```
+
 Additionally, you can include multiple exception handler classes in the application and manage potential error scenarios based on their registration order. For example:
+
 ```csharp
 public class DivideByZeroExceptionHandler(ILogger<DivideByZeroExceptionHandler> logger) : IExceptionHandler
 {
@@ -181,6 +187,7 @@ public class NullReferenceExceptionHandler(ILogger<NullReferenceExceptionHandler
 If you pay attention to the exception handler classes we created here, you’ll notice that the error is evaluated behaviorally. If it is not suitable, a false value is returned, indicating that the exception is not handled by that class. This allows the next handler class to take over, and the process continues until it reaches the handler class that returns true.
 
 For this reason, the handler class that addresses the most general type of error should be defined last, as shown below.
+
 ```csharp
 builder.Services.AddExceptionHandler<Global.Error.Handling.Example.New_Method.DivideByZeroExceptionHandler>();
 builder.Services.AddExceptionHandler<Global.Error.Handling.Example.New_Method.NullReferenceExceptionHandler>();
@@ -219,26 +226,4 @@ builder.Services.AddProblemDetails();
 Combined with `UseExceptionHandler()` (no custom handler needed for the default case), unhandled exceptions now come back as a consistent, machine-readable `application/problem+json` response instead of whatever ad hoc shape you'd otherwise hand-roll — the same idea as the [custom exception filter](/posts/dotnet8-custom-exceptions/) covered in the earlier post, just standardized across the whole app instead of per-action.
 
 ![Desktop View](/assets/img/posts/thanks-for-reading.webp)
-_Thanks For Reading_
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*Thanks For Reading*

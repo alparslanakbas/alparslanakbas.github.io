@@ -10,9 +10,9 @@ _site
 # RubyGems
 *.gem
 
-# NPM dependencies
+# NPM dependencies (package-lock.json IS committed on purpose, like
+# Gemfile.lock — CI's `npm ci` needs it for a reproducible install)
 node_modules
-package-lock.json
 
 # IDE configurations
 .idea

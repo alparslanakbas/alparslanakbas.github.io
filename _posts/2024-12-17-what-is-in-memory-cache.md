@@ -13,20 +13,24 @@ image:
 ---
 
 ## Introduction
+
 Hello,
 
 Following up on the [introduction to caching](/posts/what-is-caching/), we will discuss what In-Memory Caching is and delve into the necessary details.
 
 ## What is In-Memory Caching?
+
 In-Memory Caching is the process of temporarily storing stable data, which is frequently retrieved from the database due to high request rates, in the memory (RAM) of the server hosting the application. This approach is used to minimize the costs associated with database queries and provide faster access to data.
 
 ## How Does It Work?
+
 When a user makes a request, the system first checks the cache for the data to be displayed. If the data is available in the cache, it is retrieved and sent to the user. If the cache is empty, the data is fetched from the database, saved in the cache, and then sent to the user. For subsequent requests, the data will be served directly from the cache. Of course, the amount of data that can be cached depends on the server's RAM specifications and capacity.
 
 ![Desktop View](/assets/img/posts/what-is-in-memory-cache.webp)
 _In Memory Cache_
 
 ### Potential Drawbacks of In-Memory Caching
+
 If an application has multiple instances accessing the same database and uses In-Memory Caching, there is a risk of data inconsistency.
 
 For example, consider the following scenario:
@@ -38,6 +42,7 @@ This inconsistency can arise in multi-instance applications using in-memory cach
 _Potential Drawbacks of In-Memory Caching_
 
 ### How Can We Resolve This Drawback?
+
 Although not a perfect solution, Session Sticky (Sticky Sessions) can partially address this issue. By configuring the load balancer to direct all requests from user X to instance A after their initial request, we can mitigate inconsistencies at the user level. This ensures users always interact with the same instance, making them unaware of discrepancies across instances. However, this is not a recommended or definitive solution.
 
 ![Desktop View](/assets/img/posts/potential-drawbacks-of-in-memory-cache.webp)
@@ -49,7 +54,6 @@ We’ve thoroughly explored the theory behind what **In-Memory** Caching is.
 In our next content, we will provide a detailed explanation of **Distributed Caching** and its workings.
 
 You can read here **[Distributed Cache](/posts/what-is-distributed-cache/)**
-
 
 ![Desktop View](/assets/img/posts/thanks-for-reading.webp)
 _Thanks For Reading_

@@ -10,6 +10,7 @@ image:
   lqip: "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACwAwCdASoYAA0APu1kqU4ppaOiMAgBMB2JZQAAWpgq7feakeXO8AD+7BGIJG1RyhMceKhJTwVBaZBN0xNqFhUEVZYStst0p90gJf3JhAAAAA=="
 ---
 ## Introduction
+
 Hello,
 
 As you know, searching for data within arrays for specific operations is a common behavior in business processes. However, such operations can lead to significant costs and substantial performance losses. In this article, we will explore the **SearchValues** feature introduced with .NET 8, designed to improve application performance in such scenarios.
@@ -17,7 +18,9 @@ As you know, searching for data within arrays for specific operations is a commo
 **SearchValues** is a specialized class developed with optimizations such as vectorization and hardware acceleration to enhance computational speed and efficiency when working with large datasets. This class stores the values to be searched in an array as immutable and readonly.
 
 ## Example
+
 The SearchValues class can be used as shown in the following example:
+
 ```csharp
 using System.Buffers;
  

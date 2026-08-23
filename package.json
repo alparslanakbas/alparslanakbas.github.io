@@ -1,0 +1,11 @@
+{
+  "name": "alparslanakbas-blog",
+  "private": true,
+  "description": "Lint tooling for the Jekyll blog content (not part of the Jekyll build itself).",
+  "devDependencies": {
+    "markdownlint-cli2": "0.23.2"
+  },
+  "scripts": {
+    "lint:md": "markdownlint-cli2"
+  }
+}
