@@ -37,17 +37,19 @@ Worth knowing if you're picking Redis for a new project: the licensing has genui
 The practical upshot: if you're running open-source Redis locally, in Docker, or self-hosted for a personal or internal project (exactly what this series covers), none of this changes anything about how you use it day to day. It matters more if you're a cloud provider reselling Redis as a managed service, or a company deciding between Redis and Valkey for a production deployment.
 
 ## Data Persistence
+
 Although Redis is a system that stores data in memory, it also supports persistent data. Since it is not entirely feasible to talk about persistent data in RAM, Redis systems can save data to hard disks using various methods. Two approaches are adopted for this purpose: **Snapshotting** and **Slave**.
 
 * **Snapshotting** involves saving snapshots of the data to the disk at specific time intervals.
 * In the **Slave** method, data is stored on slaves, reducing the load on masters and ensuring persistence.
 
-
 ## Pipelining
+
 Thanks to Redis' pipelining feature, it retrieves all requested data in a single batch, significantly boosting performance and speed.
 In summary:
 
-**Advantages**
+### Advantages
+
 * Reduces CPU costs by shifting CPU usage in traditional databases to memory.
 * Since data stored in memory is processed very quickly, it provides a performance boost.
 * It is open source again as of Redis 8 (see [Licensing](#licensing)).
@@ -57,12 +59,14 @@ In summary:
 * Works synchronously, making it extremely fast.
 * Can save data not only in memory but also to hard disks.
 
-**Disadvantages**
+### Disadvantages
+
 * The data to be stored is limited by the capacity of the RAM.
 * Does not support complex, report-like queries as in relational database systems.
 * Since there are no transactions, errors encountered during the process cannot be compensated.
 
 ## Use Cases
+
 * Caching
 * Session Storage
 * Queues
@@ -73,27 +77,3 @@ Next up: [installing Redis locally with Docker](/posts/run-redis-with-docker/), 
 
 ![Desktop View](/assets/img/posts/thanks-for-reading.webp)
 _Thanks For Reading_
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

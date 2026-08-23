@@ -21,7 +21,7 @@ _Rate limiter schema_
 
 ## Rate Limiter Algorithms
 
-There are four built-in algorithms. The fixed window, sliding window, and token bucket limiters all cap the number of requests over a time period; the concurrency limiter caps how many requests can run *at the same time*, regardless of how long each one takes. Which one you want depends on the cost of the endpoint — a cheap read and an expensive report export shouldn't necessarily use the same policy.
+There are four built-in algorithms. The fixed window, sliding window, and token bucket limiters all cap the number of requests over a time period; the concurrency limiter caps how many requests can run _at the same time_, regardless of how long each one takes. Which one you want depends on the cost of the endpoint — a cheap read and an expensive report export shouldn't necessarily use the same policy.
 
 ### Fixed Window Limiter
 
@@ -42,7 +42,8 @@ builder.Services.AddRateLimiter(options =>
 app.UseRateLimiter();
 ```
 
-**Explanation**
+#### Explanation (Fixed Window)
+
 * `Window`: The time frame during which the rate limit policy is applied. Here it's 12 seconds.
 * `PermitLimit`: The maximum number of requests allowed within the window. Here, 5 requests per 12 seconds.
 * `QueueLimit`: How many additional requests can be queued once the limit is reached, rather than rejected outright.
@@ -102,7 +103,8 @@ builder.Services.AddRateLimiter(options =>
 app.UseRateLimiter();
 ```
 
-**Explanation**
+#### Explanation (Token Bucket)
+
 * `TokenLimit`: The maximum number of tokens the bucket can hold — the size of the burst you're willing to absorb in one go.
 * `TokensPerPeriod` / `ReplenishmentPeriod`: How many tokens get added back, and how often. Here, 4 tokens every 12 seconds.
 * `QueueLimit` / `QueueProcessingOrder`: Same meaning as the other limiters.
@@ -115,7 +117,7 @@ This is the one to reach for when you want to allow occasional bursts (a client 
 
 ### Concurrency Limiter
 
-The odd one out — it doesn't care about *how many requests over time*, only *how many are in flight right now*. Useful for protecting an endpoint that does something genuinely expensive (a report generation, a large file upload) where the cost is tied up in how long each request takes, not how often they arrive.
+The odd one out — it doesn't care about _how many requests over time_, only _how many are in flight right now_. Useful for protecting an endpoint that does something genuinely expensive (a report generation, a large file upload) where the cost is tied up in how long each request takes, not how often they arrive.
 
 ```csharp
 builder.Services.AddRateLimiter(options =>
@@ -131,7 +133,7 @@ builder.Services.AddRateLimiter(options =>
 app.UseRateLimiter();
 ```
 
-A request takes a permit when it starts and releases it when it finishes — so a slow request holds its slot the whole time it's running, unlike the other three limiters which only care about the request *count*.
+A request takes a permit when it starts and releases it when it finishes — so a slow request holds its slot the whole time it's running, unlike the other three limiters which only care about the request _count_.
 
 ```csharp
 [EnableRateLimiting("Concurrency")]

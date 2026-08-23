@@ -1,0 +1,29 @@
+// markdownlint config for this repo's own content, tuned around two
+// project-specific facts: posts are Chirpy/kramdown, and CLAUDE.md's own
+// front-matter contract (tools/validate-front-matter.rb) already owns
+// front-matter-shaped concerns, so this only covers Markdown body style.
+{
+  "config": {
+    "default": true,
+
+    // Chirpy renders front matter's `title` as the page H1 — posts are
+    // written to start at H2, there's never a body H1. Both rules would
+    // otherwise flag every single post.
+    "MD041": false, // first-line-heading
+    "MD025": false, // single-title / single-h1
+
+    // Chirpy convention embeds raw HTML for things markdown can't do
+    // cleanly (e.g. <sub>, prompt boxes' surrounding markup) — this is
+    // intentional, not a mistake to flag.
+    "MD033": false, // no-inline-html
+
+    // Prose isn't hard-wrapped at a fixed column in this project.
+    "MD013": false, // line-length
+
+    // Kramdown IAL attributes (`{: .prompt-tip }`) look like inline HTML
+    // attributes to a generic linter; nothing to fix here.
+    "MD007": { "indent": 2 } // unordered-list-indent, matches existing posts
+  },
+  "globs": ["_posts/**/*.md", "_tabs/**/*.md"],
+  "ignores": ["_site/**", "node_modules/**"]
+}

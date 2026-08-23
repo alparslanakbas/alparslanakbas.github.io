@@ -48,6 +48,17 @@ jobs:
       - name: Validate post front matter
         run: ruby tools/validate-front-matter.rb
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+
+      - name: Lint Markdown
+        run: |
+          npm ci
+          npm run lint:md
+
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
         env:

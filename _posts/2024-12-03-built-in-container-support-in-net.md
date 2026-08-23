@@ -23,7 +23,9 @@ The core idea behind this approach stems from the fact that, in many software ap
 Now, we will revisit how a .NET application is containerized using a Dockerfile and, in parallel, demonstrate how this can be done without a Dockerfile. We will evaluate both methods comparatively. If you've used Docker before — [running a Redis server in a container](/posts/run-redis-with-docker/), for example — the commands below will feel familiar. Let's dive in!
 
 ## Let's Starting
+
 First, let's develop an ASP.NET Core WEB API application with the following endpoint:
+
 ```csharp
 var builder = WebApplication.CreateBuilder(args);
  
@@ -35,6 +37,7 @@ app.Run();
 ```
 
 Next, to dockerize this application, let's create a Dockerfile with the following content:
+
 ```yml
 FROM mcr.microsoft.com/dotnet/sdk:8.0 as build
 WORKDIR /src
@@ -52,16 +55,19 @@ ENTRYPOINT ["dotnet", "Docker.Example.dll"]
 ```
 
 Now that the Dockerfile is ready, let's create an image using the following command:
+
 ```bash
 docker build -t docker-example .
 ```
 
 After completing this process, we can create a container from the generated image using the command:
+
 ```bash
 docker run -p 5000:5000 --name docker-example-container docker-example
 ```
 
 And you will see this output:
+
 ```bash
 Hello World!
 ```
@@ -71,6 +77,7 @@ You might be wondering, "What exactly is difficult or complicated about this?" A
 To address such scenarios, Microsoft has introduced built-in container support in .NET, allowing developers to dockerize applications without relying on a Dockerfile.
 
 With this support, we can create a Docker image and launch a container from it with a single command:
+
 ```bash
 dotnet publish --os linux --arch x64 /t:PublishContainer
 ```
@@ -79,6 +86,7 @@ dotnet publish --os linux --arch x64 /t:PublishContainer
 {: .prompt-info }
 
 You can set the image name, and a few other options, in your .csproj instead of passing them on the command line every time:
+
 ```csharp
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
@@ -97,11 +105,13 @@ You can set the image name, and a few other options, in your .csproj instead of 
 ```
 
 With those set, the command shrinks back down to:
+
 ```bash
 dotnet publish --os linux --arch x64 /t:PublishContainer
 ```
 
 Add a `RuntimeIdentifier` and you don't even need to pass `--os`/`--arch` on the command line:
+
 ```csharp
 <ContainerRepository>docker-example-container</ContainerRepository>
 <ContainerImageTags>1.1.0;latest</ContainerImageTags>
@@ -111,12 +121,14 @@ Add a `RuntimeIdentifier` and you don't even need to pass `--os`/`--arch` on the
 ```bash
 dotnet publish /t:PublishContainer
 ```
+
 As a result of this process, if you check your images in Docker, you will see that an image has been created with the name you specified.
 
 ![Desktop View](/assets/img/posts/Built-In-Container-Support-in-NET-Dockerizing-NET-Applications-Without-a-Dockerfile-1.webp)
 _NET-Dockerizing-NET-Applications-Without-a-Dockerfile_
 
 Beyond these options, you can also customize the image to be created using the properties described below:
+
 * **ContainerBaseImage**: This property allows you to control the base image used to build .NET applications. By default, the SDK uses the **mcr.microsoft.com/dotnet/aspnet** image.
 * **ContainerRepository**: This property enables you to change the name of the image (the modern replacement for `ContainerImageName`).
 * **ContainerPort**: This property allows you to specify the container's port.
@@ -137,10 +149,11 @@ Additionally, you can define environment variables using the **ContainerEnvironm
 
 The core workflow above hasn't changed since .NET 7 introduced it, but a couple of details have:
 
-- **ASP.NET Core and Worker SDK projects (like the one used here) already support this out of the box.** Console apps were the odd one out — they needed an explicit `<EnableSdkContainerSupport>true</EnableSdkContainerSupport>` opt-in. .NET 10 removed that gap: console apps get the same zero-config experience now.
-- **Multi-architecture images** (building one image that works on both `linux-x64` and `linux-arm64`, for example) are supported starting with SDK 8.0.405+ and 9.0.102+, if you're deploying to mixed-architecture infrastructure.
+* **ASP.NET Core and Worker SDK projects (like the one used here) already support this out of the box.** Console apps were the odd one out — they needed an explicit `<EnableSdkContainerSupport>true</EnableSdkContainerSupport>` opt-in. .NET 10 removed that gap: console apps get the same zero-config experience now.
+* **Multi-architecture images** (building one image that works on both `linux-x64` and `linux-arm64`, for example) are supported starting with SDK 8.0.405+ and 9.0.102+, if you're deploying to mixed-architecture infrastructure.
 
 Once the image exists, running it locally to sanity-check it before pushing anywhere is the same as any other image:
+
 ```bash
 docker run -p 5000:5000 --rm docker-example-container
 curl http://localhost:5000/
