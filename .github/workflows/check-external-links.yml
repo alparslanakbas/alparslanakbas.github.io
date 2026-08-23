@@ -1,0 +1,50 @@
+name: "Check external links"
+
+# Runs separately from the deploy pipeline on purpose: the main build's
+# htmlproofer step passes --disable-external so a flaky third-party site
+# (rate limiting, a transient 5xx, a bot block) can never fail a deploy.
+# This workflow checks external links on a schedule instead, so broken
+# ones get surfaced without ever blocking a push to main.
+
+on:
+  schedule:
+    # Mondays at 06:00 UTC (09:00 +0300)
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.4
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll b -d "_site"
+        env:
+          JEKYLL_ENV: "production"
+
+      - name: Check external links
+        env:
+          # Domains that block automated requests with a hard 403/999
+          # regardless of whether the linked page is genuinely fine for a
+          # human visitor (verified manually), plus the theme's own
+          # preconnect/dns-prefetch hints (bare origins, nothing ever
+          # resolves there directly - only their real, deeper URLs like
+          # fonts.googleapis.com/css2?... are worth actually checking).
+          IGNORE_URLS: "/^http:\\/\\/127.0.0.1/,/^http:\\/\\/0.0.0.0/,/^http:\\/\\/localhost/,/^https:\\/\\/fonts\\.googleapis\\.com$/,/^https:\\/\\/fonts\\.gstatic\\.com$/,/^https:\\/\\/www\\.linkedin\\.com/,/^https:\\/\\/www\\.godaddy\\.com/"
+        run: |
+          bundle exec htmlproofer _site \
+            --checks Links \
+            --ignore-urls "$IGNORE_URLS" \
+            --hydra '{"max_concurrency": 5}' \
+            --typhoeus '{"timeout": 20, "connecttimeout": 10}'
