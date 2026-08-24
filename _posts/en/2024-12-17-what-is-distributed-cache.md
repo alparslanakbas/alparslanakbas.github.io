@@ -3,6 +3,7 @@ title: What is Distributed Caching ?
 description: "What distributed caching is, how it keeps data consistent across multiple application instances, and how it compares to in-memory caching."
 date: 2024-12-17 23:10 +0300
 last_modified_at: 2026-08-24 22:00 +0300
+translation_key: what-is-distributed-cache
 categories: [Data, Caching]
 tags: [caching, distributed-systems, redis]
 series: "Caching & Redis"
