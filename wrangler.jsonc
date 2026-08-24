@@ -1,0 +1,14 @@
+{
+  // Static-assets-only Worker config for Cloudflare Workers Builds' PR
+  // preview deployments (per-branch/PR preview URLs posted as PR
+  // comments). Has nothing to do with the real site: the real
+  // alparslanakbas.github.io is still deployed by
+  // .github/workflows/pages-deploy.yml to GitHub Pages, untouched by
+  // this. This just gives every PR a throwaway *.workers.dev preview
+  // of the built Jekyll site so a change can be eyeballed before merge.
+  "name": "alparslanakbas-github-io",
+  "compatibility_date": "2026-08-24",
+  "assets": {
+    "directory": "_site"
+  }
+}
