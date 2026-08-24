@@ -6,6 +6,15 @@
   // .github/workflows/pages-deploy.yml to GitHub Pages, untouched by
   // this. This just gives every PR a throwaway *.workers.dev preview
   // of the built Jekyll site so a change can be eyeballed before merge.
+  //
+  // Dashboard setting required for this to build (Settings > Build):
+  // Build command = "bundle install && bundle exec jekyll build" — the
+  // platform's own auto-detected `bundle install` runs with
+  // BUNDLE_WITHOUT="development test", which skips html-proofer (a
+  // :test-group gem in the Gemfile) and its dependencies; that
+  // exclusion doesn't carry over into the separate build-command step,
+  // so `bundle exec jekyll build` fails to resolve the Gemfile.lock
+  // without a second, unfiltered `bundle install` first.
   "name": "alparslanakbas-github-io",
   "compatibility_date": "2026-08-24",
   "assets": {
