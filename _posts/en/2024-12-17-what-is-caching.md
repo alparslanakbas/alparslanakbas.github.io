@@ -3,6 +3,7 @@ title: "Caching in .NET: The Complete Guide"
 description: "A practical guide to caching in .NET: in-memory vs distributed, Output Caching, HybridCache, and a decision table for picking the right one."
 date: 2024-12-17 22:15 +0300
 last_modified_at: 2026-08-24 22:00 +0300
+translation_key: what-is-caching
 categories: [Data, Caching]
 tags: [caching, redis, aspnet-core, performance]
 series: "Caching & Redis"
