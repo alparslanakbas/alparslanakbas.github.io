@@ -9,6 +9,7 @@
 
 require "yaml"
 require "date"
+require "pathname"
 
 # Resolved from Dir.pwd rather than __dir__/__FILE__ on purpose: on this
 # Windows setup, a repo path containing non-ASCII characters (e.g. this
@@ -46,8 +47,12 @@ def front_matter_and_body(path)
   [YAML.safe_load(parts[1], permitted_classes: [Date, Time]), parts[2]]
 end
 
-Dir.glob(File.join(POSTS_DIR, "*.md")).sort.each do |path|
-  filename = File.basename(path)
+Dir.glob(File.join(POSTS_DIR, "**", "*.md")).sort.each do |path|
+  # Relative path (e.g. "en/2024-12-23-what-is-redis.md"), not just the
+  # basename - an EN post and its TR translation are expected to share
+  # the same filename under _posts/en/ and _posts/tr/, and basename-only
+  # keys would silently merge their error lists together.
+  filename = Pathname.new(path).relative_path_from(Pathname.new(POSTS_DIR)).to_s
   fm, body = front_matter_and_body(path)
 
   if fm.nil?
@@ -77,7 +82,7 @@ Dir.glob(File.join(POSTS_DIR, "*.md")).sort.each do |path|
     errors[filename] << "date eksik"
   else
     fm_date = date_field.is_a?(String) ? DateTime.parse(date_field) : date_field
-    file_date_str = filename[0, 10]
+    file_date_str = File.basename(filename)[0, 10]
     begin
       file_date = Date.parse(file_date_str)
       if fm_date.to_date != file_date
@@ -174,7 +179,7 @@ Dir.glob(File.join(POSTS_DIR, "*.md")).sort.each do |path|
 end
 
 if errors.empty?
-  puts "✅ Tüm yazılar front matter sözleşmesine uyuyor (#{Dir.glob(File.join(POSTS_DIR, '*.md')).length} yazı kontrol edildi)."
+  puts "✅ Tüm yazılar front matter sözleşmesine uyuyor (#{Dir.glob(File.join(POSTS_DIR, '**', '*.md')).length} yazı kontrol edildi)."
   exit 0
 end
 

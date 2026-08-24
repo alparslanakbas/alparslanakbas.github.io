@@ -1,0 +1,14 @@
+<!-- hreflang for EN/TR post pairs. No-op unless page.translation_key is set (CLAUDE.md §8 rule 5: translation is opt-in per post, not every post has a pair). -->
+
+{% if page.translation_key %}
+  {% assign translations = site.posts | where: "translation_key", page.translation_key %}
+  {% if translations.size > 1 %}
+    {% for t in translations %}
+      <link rel="alternate" hreflang="{{ t.lang }}" href="{{ t.url | absolute_url }}">
+    {% endfor %}
+    {% assign en_version = translations | where: "lang", "en" | first %}
+    {% if en_version %}
+      <link rel="alternate" hreflang="x-default" href="{{ en_version.url | absolute_url }}">
+    {% endif %}
+  {% endif %}
+{% endif %}
