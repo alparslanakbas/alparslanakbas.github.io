@@ -101,7 +101,7 @@ Response: ...
 
 If you have any questions or suggestions about this package, feel free to leave a comment or reach out via our GitHub page.
 
-[Github Repository](https://github.com/alparslanakbas/request-response-nuget-package/tree/main/Request-Response-Middleware-Solition/RRM-File-Logger.Library)
+[Github Repository](https://github.com/alparslanakbas/request-response-nuget-package/tree/main/src/CD.File-Logger.Middleware)
 
 We look forward to seeing how you use this middleware to enhance your projects. 😊
 
