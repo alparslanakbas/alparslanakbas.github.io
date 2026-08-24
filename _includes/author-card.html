@@ -1,0 +1,25 @@
+<!-- A closing "about the author" card at the bottom of every post. Static/site-wide rather than per-`page.author` on purpose — there's one author on this blog, and this card is a richer bio+links box than the theme's own small "written by X" byline higher up the page, not a replacement for it. -->
+
+<aside id="author-card" aria-labelledby="author-card-label" class="mb-4 p-3 border rounded-3 d-flex align-items-center gap-3">
+  <img
+    src="{{ site.avatar | relative_url }}"
+    alt="{{ site.social.name }}"
+    class="rounded-circle flex-shrink-0"
+    width="64"
+    height="64"
+  >
+  <div>
+    <h3 class="mb-1" id="author-card-label">{{ site.social.name }}</h3>
+    <p class="text-muted mb-2">
+      Freelance .NET developer, mostly writing about ASP.NET Core and caching.
+      <a href="{{ '/about/' | relative_url }}">More about me &rarr;</a>
+    </p>
+    <a href="https://github.com/alparslanakbas" class="me-3">
+      <i class="fa-brands fa-github fa-fw me-1"></i>GitHub
+    </a>
+    <a href="https://www.linkedin.com/in/alparslanakbas/">
+      <i class="fa-brands fa-linkedin fa-fw me-1"></i>LinkedIn
+    </a>
+  </div>
+</aside>
+<!-- #author-card -->
