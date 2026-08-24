@@ -35,13 +35,15 @@ jobs:
 
       - name: Check external links
         env:
-          # Domains that block automated requests with a hard 403/999
-          # regardless of whether the linked page is genuinely fine for a
-          # human visitor (verified manually), plus the theme's own
-          # preconnect/dns-prefetch hints (bare origins, nothing ever
-          # resolves there directly - only their real, deeper URLs like
-          # fonts.googleapis.com/css2?... are worth actually checking).
-          IGNORE_URLS: "/^http:\\/\\/127.0.0.1/,/^http:\\/\\/0.0.0.0/,/^http:\\/\\/localhost/,/^https:\\/\\/fonts\\.googleapis\\.com$/,/^https:\\/\\/fonts\\.gstatic\\.com$/,/^https:\\/\\/www\\.linkedin\\.com/,/^https:\\/\\/www\\.godaddy\\.com/"
+          # Domains that block automated requests with a hard 403/999,
+          # specifically against GitHub Actions' well-known runner IP
+          # ranges - confirmed by comparing a real run here against the
+          # same URLs loading fine (200) from a normal browser-UA curl
+          # elsewhere. Also the theme's own preconnect/dns-prefetch
+          # hints (bare origins, nothing ever resolves there directly -
+          # only their real, deeper URLs like fonts.googleapis.com/
+          # css2?... are worth actually checking).
+          IGNORE_URLS: "/^http:\\/\\/127.0.0.1/,/^http:\\/\\/0.0.0.0/,/^http:\\/\\/localhost/,/^https:\\/\\/fonts\\.googleapis\\.com$/,/^https:\\/\\/fonts\\.gstatic\\.com$/,/^https:\\/\\/www\\.linkedin\\.com/,/^https:\\/\\/www\\.godaddy\\.com/,/^https:\\/\\/medium\\.com/,/^https:\\/\\/substack\\.com/,/^https:\\/\\/www\\.namecheap\\.com/,/^https:\\/\\/jekyllthemes\\.org/"
         run: |
           bundle exec htmlproofer _site \
             --checks Links \
