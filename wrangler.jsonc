@@ -16,7 +16,7 @@
   // so `bundle exec jekyll build` fails to resolve the Gemfile.lock
   // without a second, unfiltered `bundle install` first.
   "name": "alparslanakbas-github-io",
-  "compatibility_date": "2026-08-24",
+  "compatibility_date": "2026-08-25",
   "assets": {
     "directory": "_site"
   }
