@@ -2,6 +2,7 @@
 title: "Rate Limiting in ASP.NET Core: A Practical Guide"
 description: "A hands-on guide to ASP.NET Core's rate limiting middleware — the four built-in algorithms, per-client partitioning, and custom rejection responses."
 date: 2024-07-11 20:40 +0300
+translation_key: dotnet7-how-to-use-rate-limitter
 categories: [.NET, ASP.NET Core]
 tags: [aspnet-core, dotnet-7, rate-limiting, middleware, partitioning]
 image:
