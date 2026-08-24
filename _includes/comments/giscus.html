@@ -1,0 +1,67 @@
+<!-- OVERRIDE: jekyll-theme-chirpy v7.6.0 — `site.comments.giscus.lang` used to be hardcoded to "en" in _config.yml (a single global value, set before i18n existed), which made this file's own `default: lang` fallback irrelevant — a TR post still rendered `data-lang: 'en'`, confirmed empirically before tracing it to the config value. Removed that hardcoded config value AND changed the fallback here to `page.lang` directly (not the `lang.html`-computed variable, which checks for a matching `_data/locales/*.yml` file — a check that's about Chirpy's own UI strings and irrelevant to giscus's separate, wider locale list: https://github.com/giscus/giscus/tree/main/locales). Falls back further to site.lang for pages with no lang of their own (e.g. tabs). Tema yükseltmesinde tekrar karşılaştır. -->
+
+<!-- https://giscus.app/ -->
+<script>
+  (function () {
+    const themeMap = Theme.newThemeMap('light', 'dark_dimmed');
+    const initTheme = themeMap[Theme.resolvedTheme];
+
+    let lang = '{{ site.comments.giscus.lang | default: page.lang | default: site.lang }}';
+    {%- comment -%} https://github.com/giscus/giscus/tree/main/locales {%- endcomment -%}
+    if (lang.length > 2 && !lang.startsWith('zh')) {
+      lang = lang.slice(0, 2);
+    }
+
+    let giscusAttributes = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': '{{ site.comments.giscus.repo}}',
+      'data-repo-id': '{{ site.comments.giscus.repo_id }}',
+      'data-category': '{{ site.comments.giscus.category }}',
+      'data-category-id': '{{ site.comments.giscus.category_id }}',
+      'data-mapping': '{{ site.comments.giscus.mapping | default: 'pathname' }}',
+      'data-strict' : '{{ site.comments.giscus.strict | default: '0' }}',
+      'data-reactions-enabled': '{{ site.comments.giscus.reactions_enabled | default: '1' }}',
+      'data-emit-metadata': '0',
+      'data-theme': initTheme,
+      'data-input-position': '{{ site.comments.giscus.input_position | default: 'bottom' }}',
+      'data-lang': lang,
+      'data-loading': 'lazy',
+      crossorigin: 'anonymous',
+      async: ''
+    };
+
+    let giscusNode = document.createElement('script');
+    Object.entries(giscusAttributes).forEach(([key, value]) =>
+      giscusNode.setAttribute(key, value)
+    );
+
+    const $footer = document.querySelector('footer');
+    $footer.insertAdjacentElement("beforebegin", giscusNode);
+
+    addEventListener('message', (event) => {
+      if (event.source === window && event.data && event.data.id === Theme.eventId) {
+        const newTheme = themeMap[Theme.resolvedTheme];
+
+        const message = {
+          setConfig: {
+            theme: newTheme
+          }
+        };
+
+        const iframe = document.querySelector('.giscus-frame');
+
+        if (!iframe) {
+          return;
+        }
+
+        if (iframe.classList.contains('giscus-frame--loading')) {
+          let url = new URL(iframe.src);
+          url.searchParams.set('theme', newTheme);
+          iframe.src = url.toString();
+        }
+
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+    });
+  })();
+</script>
