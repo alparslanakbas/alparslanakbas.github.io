@@ -16,12 +16,15 @@
   // so `bundle exec jekyll build` fails to resolve the Gemfile.lock
   // without a second, unfiltered `bundle install` first.
   //
-  // Also worth knowing: after correcting the Build command in the
-  // dashboard, builds kept failing with the OLD command on every
-  // branch until the project's Build cache (Settings > Build > Build
-  // cache > Clear Cache) was manually cleared — it looks like the
-  // resolved build command/plan gets cached per-project, not just
-  // dependencies, and isn't invalidated just by editing the setting.
+  // Also worth knowing: editing the Build command in Settings > Build
+  // AFTER the Git integration was first connected did not affect any
+  // subsequent git-triggered build (production or preview branch
+  // alike) - every one kept using the original, uncorrected command
+  // from setup time, confirmed across 3 different fresh branches and
+  // a Build cache clear, neither of which helped. Disconnecting and
+  // reconnecting the Git repository (Settings > Build > Disconnect,
+  // then Connect to Git again with the correct Build command entered
+  // during setup this time) is what actually fixed it.
   "name": "alparslanakbas-github-io",
   "compatibility_date": "2026-08-25",
   "assets": {
