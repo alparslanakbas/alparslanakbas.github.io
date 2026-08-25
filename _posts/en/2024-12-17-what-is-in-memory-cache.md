@@ -2,6 +2,7 @@
 title: What is In-Memory Caching ?
 description: "How in-memory caching works, why it speeds up applications, and the data-consistency risks it introduces across multiple app instances."
 date: 2024-12-17 22:40 +0300
+translation_key: what-is-in-memory-cache
 categories: [Data, Caching]
 tags: [caching, in-memory, redis]
 series: "Caching & Redis"
