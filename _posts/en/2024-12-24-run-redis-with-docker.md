@@ -2,6 +2,7 @@
 title: Starting a Redis Server with a Docker Container
 description: "A quick guide to running a Redis server locally in a Docker container on Windows, and testing it with basic redis-cli SET and GET commands."
 date: 2024-12-24 01:25 +0300
+translation_key: run-redis-with-docker
 categories: [Data, Redis]
 tags: [redis, docker, nosql]
 series: "Caching & Redis"
