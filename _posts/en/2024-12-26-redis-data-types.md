@@ -2,6 +2,7 @@
 title: Redis Data Types
 description: "A practical tour of Redis's core data types, strings, lists, sets, sorted sets, and hashes, with real command examples for each."
 date: 2024-12-26 23:53 +0300
+translation_key: redis-data-types
 categories: [Data, Redis]
 tags: [redis, data-types, nosql]
 series: "Caching & Redis"
