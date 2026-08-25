@@ -2,6 +2,7 @@
 title: What is Redis Databases? How to Use It?
 description: "An introduction to RedisInsight (Redis Databases), a graphical tool for connecting to and visualizing key-value data on a Redis server."
 date: 2024-12-26 00:23 +0300
+translation_key: redis-databases
 categories: [Data, Redis]
 tags: [redis, redisinsight, nosql]
 series: "Caching & Redis"
