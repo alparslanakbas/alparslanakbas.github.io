@@ -2,6 +2,7 @@
 title: Working with In-Memory Database Using Entity Framework Core
 description: "How to use Entity Framework Core's in-memory database provider to model and test data access quickly, without a real database connection."
 date: 2024-12-14 23:30 +0300
+translation_key: working-with-in-memory
 categories: [.NET, Entity Framework]
 tags: [entity-framework, in-memory-database, testing]
 image:
