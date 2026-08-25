@@ -2,6 +2,7 @@
 # the default layout is 'page'
 icon: fas fa-info-circle
 order: 5
+translation_key: about
 description: >-
   Alparslan Akbaş is a freelance .NET developer focused on ASP.NET Core,
   backend architecture, and caching systems like Redis.

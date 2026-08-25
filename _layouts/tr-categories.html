@@ -1,0 +1,113 @@
+---
+layout: page
+# Turkish equivalent of Chirpy's own `categories` layout
+# (_layouts/categories.html), consuming pre-computed data from
+# _plugins/tr_archives.rb (`page.category_groups`) instead of
+# `site.categories`, which is English-only by design - see
+# docs/OVERRIDES.md.
+---
+
+{% include lang.html %}
+
+{% assign HEAD_PREFIX = 'h_' %}
+{% assign LIST_PREFIX = 'l_' %}
+{% assign group_index = 0 %}
+
+{% for group in page.category_groups %}
+  {% assign sub_size = group.subcategories.size %}
+
+  <div class="card categories">
+    <div
+      id="{{ HEAD_PREFIX }}{{ group_index }}"
+      class="card-header d-flex justify-content-between hide-border-bottom"
+    >
+      <span class="ms-2">
+        <i class="far fa-folder{% if sub_size > 0 %}-open{% endif %} fa-fw"></i>
+
+        <a href="{{ group.url | relative_url }}" class="mx-2">{{ group.name }}</a>
+
+        <span class="text-muted small font-weight-light">
+          {% if sub_size > 0 %}
+            {{ sub_size }}
+            {% if sub_size > 1 %}
+              {{
+                site.data.locales[lang].categories.category_measure.plural
+                | default: site.data.locales[lang].categories.category_measure
+              }}
+            {% else %}
+              {{
+                site.data.locales[lang].categories.category_measure.singular
+                | default: site.data.locales[lang].categories.category_measure
+              }}
+            {% endif -%}
+            ,
+          {% endif %}
+
+          {{ group.count }}
+
+          {% if group.count > 1 %}
+            {{
+              site.data.locales[lang].categories.post_measure.plural
+              | default: site.data.locales[lang].categories.post_measure
+            }}
+          {% else %}
+            {{
+              site.data.locales[lang].categories.post_measure.singular
+              | default: site.data.locales[lang].categories.post_measure
+            }}
+          {% endif %}
+        </span>
+      </span>
+
+      {% if sub_size > 0 %}
+        <a
+          href="#{{ LIST_PREFIX }}{{ group_index }}"
+          data-bs-toggle="collapse"
+          aria-expanded="true"
+          aria-label="{{ HEAD_PREFIX }}{{ group_index }}-trigger"
+          class="category-trigger hide-border-bottom"
+        >
+          <i class="fas fa-fw fa-angle-down"></i>
+        </a>
+      {% else %}
+        <span data-bs-toggle="collapse" class="category-trigger hide-border-bottom disabled">
+          <i class="fas fa-fw fa-angle-right"></i>
+        </span>
+      {% endif %}
+    </div>
+    <!-- .card-header -->
+
+    {% if sub_size > 0 %}
+      <div id="{{ LIST_PREFIX }}{{ group_index }}" class="collapse show" aria-expanded="true">
+        <ul class="list-group">
+          {% for sub in group.subcategories %}
+            <li class="list-group-item">
+              <i class="far fa-folder fa-fw"></i>
+
+              <a href="{{ sub.url | relative_url }}" class="mx-2">{{ sub.name }}</a>
+
+              <span class="text-muted small font-weight-light">
+                {{ sub.count }}
+
+                {% if sub.count > 1 %}
+                  {{
+                    site.data.locales[lang].categories.post_measure.plural
+                    | default: site.data.locales[lang].categories.post_measure
+                  }}
+                {% else %}
+                  {{
+                    site.data.locales[lang].categories.post_measure.singular
+                    | default: site.data.locales[lang].categories.post_measure
+                  }}
+                {% endif %}
+              </span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+  <!-- .card -->
+
+  {% assign group_index = group_index | plus: 1 %}
+{% endfor %}

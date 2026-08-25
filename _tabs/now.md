@@ -1,6 +1,7 @@
 ---
 icon: fas fa-bolt
 order: 6
+translation_key: now
 description: >-
   What Alparslan Akbaş is actually doing right now — projects, work, and
   the occasional non-technical update.
