@@ -2,6 +2,7 @@
 title: Improving Array Search Performance with SearchValues
 description: "An overview of .NET's SearchValues class and how its vectorized, hardware-accelerated lookups speed up searching arrays for multiple values."
 date: 2024-12-10 19:00 +0300
+translation_key: use-searchvalues
 categories: [.NET, Performance]
 tags: [dotnet-8, dotnet-9, performance, arrays]
 image:
