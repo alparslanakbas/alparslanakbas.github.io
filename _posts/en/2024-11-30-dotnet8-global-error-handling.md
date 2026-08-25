@@ -2,6 +2,7 @@
 title: Asp.NET Core 8 – Global Error Handling
 description: "Global error handling in ASP.NET Core: custom middleware vs. IExceptionHandler, ProblemDetails, and a real diagnostics change in .NET 10."
 date: 2024-11-30 22:05 +0300
+translation_key: dotnet8-global-error-handling
 categories: [.NET, ASP.NET Core]
 tags: [aspnet-core, dotnet-8, error-handling, middleware, problemdetails]
 series: "ASP.NET Core Error Handling"
