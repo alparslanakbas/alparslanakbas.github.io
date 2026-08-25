@@ -20,7 +20,13 @@ require "pathname"
 # path fail outright with Errno::EINVAL. Dir.pwd is unaffected — this
 # script (like everything else in tools/ and bin/) is meant to be run
 # from the repo root anyway, so this is not a behavior change.
-POSTS_DIR = File.join(Dir.pwd, "_posts")
+#
+# Two separate roots: English posts are Jekyll's built-in `posts`
+# collection (_posts/en/), Turkish posts are their own `tr_posts`
+# collection (_tr_posts/) - see _config.yml's `collections:` block for
+# why (keeps every language-agnostic Chirpy template, home/archives/
+# tags/feed/search, English-only with zero template changes).
+POST_DIRS = [File.join(Dir.pwd, "_posts"), File.join(Dir.pwd, "_tr_posts")].freeze
 
 CATEGORY_TREE = {
   ".NET" => ["ASP.NET Core", "Entity Framework", "C# Language", "Performance"],
@@ -47,12 +53,19 @@ def front_matter_and_body(path)
   [YAML.safe_load(parts[1], permitted_classes: [Date, Time]), parts[2]]
 end
 
-Dir.glob(File.join(POSTS_DIR, "**", "*.md")).sort.each do |path|
-  # Relative path (e.g. "en/2024-12-23-what-is-redis.md"), not just the
-  # basename - an EN post and its TR translation are expected to share
-  # the same filename under _posts/en/ and _posts/tr/, and basename-only
-  # keys would silently merge their error lists together.
-  filename = Pathname.new(path).relative_path_from(Pathname.new(POSTS_DIR)).to_s
+all_paths = POST_DIRS.flat_map { |dir| Dir.glob(File.join(dir, "**", "*.md")) }.sort
+
+all_paths.each do |path|
+  # Relative path (e.g. "en/2024-12-23-what-is-redis.md" or
+  # "tr/2026-08-25-what-is-redis.md"), not just the basename - an EN post
+  # and its TR translation are expected to share the same base filename,
+  # and basename-only keys would silently merge their error lists
+  # together. _tr_posts/ has no language subfolder of its own (it IS the
+  # Turkish collection), so "tr/" is prefixed by hand for the same
+  # at-a-glance readability "en/..." already has.
+  base_dir = POST_DIRS.find { |dir| path.start_with?(dir) }
+  relative = Pathname.new(path).relative_path_from(Pathname.new(base_dir)).to_s
+  filename = base_dir.end_with?("_tr_posts") ? File.join("tr", relative) : relative
   fm, body = front_matter_and_body(path)
 
   if fm.nil?
@@ -179,7 +192,7 @@ Dir.glob(File.join(POSTS_DIR, "**", "*.md")).sort.each do |path|
 end
 
 if errors.empty?
-  puts "✅ Tüm yazılar front matter sözleşmesine uyuyor (#{Dir.glob(File.join(POSTS_DIR, '**', '*.md')).length} yazı kontrol edildi)."
+  puts "✅ Tüm yazılar front matter sözleşmesine uyuyor (#{all_paths.length} yazı kontrol edildi)."
   exit 0
 end
 
