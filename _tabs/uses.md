@@ -1,6 +1,7 @@
 ---
 icon: fas fa-screwdriver-wrench
 order: 7
+translation_key: uses
 description: >-
   The everyday development setup Alparslan Akbaş writes .NET and ASP.NET
   Core with — OS, editors, and version control.

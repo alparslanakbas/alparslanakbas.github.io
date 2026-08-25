@@ -2,16 +2,20 @@
 
 {% if page.translation_key %}
   {% comment %}
-    Both collections, not just site.posts - Turkish posts live in
-    site.tr_posts (own collection, see docs/OVERRIDES.md), so a
-    translation_key pair now always has one document in each.
+    All three sources, not just site.posts - Turkish posts live in
+    site.tr_posts (own collection), tabs (About/Projects/Now/Uses/
+    Categories/Tags/Archives) share site.tabs regardless of language -
+    see docs/OVERRIDES.md. EN tabs never set `lang` explicitly (there's
+    nothing to disambiguate on the English side), so it's defaulted to
+    "en" here rather than emitting an empty hreflang attribute.
   {% endcomment %}
-  {% assign translations = site.posts | concat: site.tr_posts | where: "translation_key", page.translation_key %}
+  {% assign translations = site.posts | concat: site.tr_posts | concat: site.tabs | where: "translation_key", page.translation_key %}
   {% if translations.size > 1 %}
     {% for t in translations %}
-      <link rel="alternate" hreflang="{{ t.lang }}" href="{{ t.url | absolute_url }}">
+      {% assign t_lang = t.lang | default: "en" %}
+      <link rel="alternate" hreflang="{{ t_lang }}" href="{{ t.url | absolute_url }}">
     {% endfor %}
-    {% assign en_version = translations | where: "lang", "en" | first %}
+    {% assign en_version = translations | where_exp: "t", "t.lang != 'tr-TR'" | first %}
     {% if en_version %}
       <link rel="alternate" hreflang="x-default" href="{{ en_version.url | absolute_url }}">
     {% endif %}

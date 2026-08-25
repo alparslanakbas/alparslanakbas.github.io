@@ -1,0 +1,18 @@
+---
+layout: page
+# Turkish equivalent of Chirpy's own `tags` layout (_layouts/tags.html),
+# consuming pre-computed data from _plugins/tr_archives.rb
+# (`page.tag_list`) instead of `site.tags`, which is English-only by
+# design - see docs/OVERRIDES.md.
+---
+
+<div id="tags" class="d-flex flex-wrap mx-xl-2">
+  {% for t in page.tag_list %}
+    <div>
+      <a class="tag" href="{{ t.url | relative_url }}">
+        {{ t.name -}}
+        <span class="text-muted">{{ t.count }}</span>
+      </a>
+    </div>
+  {% endfor %}
+</div>

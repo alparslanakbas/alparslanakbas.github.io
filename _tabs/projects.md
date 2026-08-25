@@ -1,6 +1,7 @@
 ---
 icon: fas fa-diagram-project
 order: 4
+translation_key: projects
 description: >-
   A few things Alparslan Akbaş has built — a live production app, published
   NuGet packages, and open-source experiments in .NET.
