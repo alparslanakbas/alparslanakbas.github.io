@@ -180,6 +180,18 @@ collections:
   tabs:
     output: true
     sort_by: order
+  # Turkish posts live in their OWN collection (_tr_posts/), not inside
+  # _posts/ - this is the key architectural fix over the original _posts/tr
+  # approach (bkz. CLAUDE.md §8): every Chirpy template that reads
+  # `site.posts` (home, archives, tags/categories, the Atom feed, search
+  # index) only ever sees the built-in `posts` collection, which now
+  # means English-only automatically, with zero changes to those
+  # templates. The Turkish side gets its own home page (`tr/index.html`)
+  # and its own `site.tr_posts` array - no more EN/TR duplicates mixed
+  # into the same feed.
+  tr_posts:
+    output: true
+    permalink: /tr/posts/:title/
 
 defaults:
   - scope:
@@ -200,13 +212,17 @@ defaults:
       # DO NOT modify the following parameter unless you are confident enough
       # to update the code of all other post links in this project.
       permalink: /posts/:title/
-  # Turkish posts (_posts/tr/) live under /tr/ - see CLAUDE.md §8.
+  # Turkish posts: own collection (_tr_posts/), not the `posts` type - see
+  # the `tr_posts:` entry above under `collections:` for why. Permalink is
+  # already set at the collection level, so it's not repeated here.
   - scope:
-      path: _posts/tr
-      type: posts
+      path: ""
+      type: tr_posts
     values:
+      layout: post
+      comments: true
+      toc: true
       lang: tr-TR
-      permalink: /tr/posts/:title/
   - scope:
       path: _drafts
     values:

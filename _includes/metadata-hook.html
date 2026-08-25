@@ -1,7 +1,12 @@
 <!-- hreflang for EN/TR post pairs. No-op unless page.translation_key is set (CLAUDE.md §8 rule 5: translation is opt-in per post, not every post has a pair). -->
 
 {% if page.translation_key %}
-  {% assign translations = site.posts | where: "translation_key", page.translation_key %}
+  {% comment %}
+    Both collections, not just site.posts - Turkish posts live in
+    site.tr_posts (own collection, see docs/OVERRIDES.md), so a
+    translation_key pair now always has one document in each.
+  {% endcomment %}
+  {% assign translations = site.posts | concat: site.tr_posts | where: "translation_key", page.translation_key %}
   {% if translations.size > 1 %}
     {% for t in translations %}
       <link rel="alternate" hreflang="{{ t.lang }}" href="{{ t.url | absolute_url }}">

@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-# Scaffolds a new post: the _posts/<lang>/ file with a filled-in front
-# matter skeleton (matching CLAUDE.md §5/§8) plus its
+# Scaffolds a new post: the _posts/en/ or _tr_posts/ file with a filled-in
+# front matter skeleton (matching CLAUDE.md §5/§8) plus its
 # assets/img/posts/<slug>/ folder (shared between an EN post and its TR
 # translation, if any - the image is the same file).
 #
@@ -42,7 +42,11 @@ unless slug.match?(KEBAB_CASE)
 end
 
 today = Date.today
-post_path = File.join(REPO_ROOT, "_posts", lang, "#{today}-#{slug}.md")
+# EN posts are Jekyll's built-in `posts` collection (_posts/en/); TR
+# posts are their own `tr_posts` collection (_tr_posts/, no language
+# subfolder of its own) - see _config.yml's `collections:` block.
+posts_dir = lang == "tr" ? "_tr_posts" : File.join("_posts", "en")
+post_path = File.join(REPO_ROOT, posts_dir, "#{today}-#{slug}.md")
 img_dir = File.join(REPO_ROOT, "assets", "img", "posts", slug)
 
 if File.exist?(post_path)

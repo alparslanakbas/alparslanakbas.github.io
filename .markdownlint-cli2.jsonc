@@ -24,6 +24,8 @@
     // attributes to a generic linter; nothing to fix here.
     "MD007": { "indent": 2 } // unordered-list-indent, matches existing posts
   },
-  "globs": ["_posts/**/*.md", "_tabs/**/*.md"],
+  // _tr_posts/ is the Turkish posts collection (own dir, not _posts/tr -
+  // see docs/OVERRIDES.md / _config.yml's `collections:` block).
+  "globs": ["_posts/**/*.md", "_tr_posts/**/*.md", "_tabs/**/*.md"],
   "ignores": ["_site/**", "node_modules/**"]
 }
