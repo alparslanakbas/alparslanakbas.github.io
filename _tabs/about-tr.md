@@ -51,7 +51,6 @@ Gerçekten karşılaştığım .NET ve ASP.NET Core sorunları hakkında yazıyo
 
 İş dışında filmler, kitaplar ve oyunlarla ilgileniyorum — tipik bir geliştirici rutini. Caching stratejileri yerine bunlardan konuşmak isterseniz hiç şikayet etmem.
 
-## Konuşalım
+---
 
-> Freelance .NET/backend işleri alıyorum. İnşa edilmesi gereken bir şeyiniz varsa — ya da sadece caching, ASP.NET Core veya backend mimarisi hakkında sohbet etmek isterseniz — [GitHub](https://github.com/alparslanakbas) veya [LinkedIn](https://www.linkedin.com/in/alparslanakbas/) üzerinden ulaşabilir ya da bana [e-posta](mailto:bybluestht@gmail.com) atabilirsiniz.
-{: .prompt-tip }
+[GitHub](https://github.com/alparslanakbas) · [LinkedIn](https://www.linkedin.com/in/alparslanakbas/) · [E-posta](mailto:bybluestht@gmail.com)
