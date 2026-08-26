@@ -5,7 +5,7 @@ translation_key: uses
 description: >-
   The stack Alparslan Akbaş, a full-stack and AI-assisted software
   developer, actually builds with — languages, frameworks, databases,
-  LLMs, and the everyday dev setup.
+  and LLMs.
 ---
 
 The short version of what I actually build with — not an exhaustive resume, just what gets used regularly.
@@ -36,19 +36,6 @@ MongoDB, Redis, Elasticsearch
 I write software *with* AI in the loop, not just *about* it. In practice that means working across models from multiple providers rather than locking into one — closed frontier models (Anthropic's Claude — Opus and Sonnet, OpenAI's GPT line, Google's Gemini) alongside open-weight ones (Qwen, Gemma, and others). I'm intentionally leaving out exact version numbers here — they're outdated within months, and this page is about the workflow, not a leaderboard snapshot.
 
 That's on top of, not instead of, actually understanding the code that comes out the other end — reviewing, testing, and owning what ships.
-
-## Operating System
-
-**Windows** — path of least resistance for the .NET/ASP.NET Core work this blog is mostly about.
-
-## Editors & IDEs
-
-- **Visual Studio** — full ASP.NET Core solutions, debugging, anything that benefits from its profiler and test tooling.
-- **Visual Studio Code** — everything smaller and faster: scripts, config, frontend work, this blog's Markdown.
-
-## Version Control
-
-**Git**, hosted on **GitHub** — including this blog itself, which deploys straight from a `git push` via GitHub Actions.
 
 ---
 

@@ -49,7 +49,6 @@ I write about the .NET and ASP.NET Core problems I actually run into — mostly 
 
 Outside of work I'm into films, books, and games — the usual developer diet. If you want to talk about any of that instead of caching strategies, I won't complain.
 
-## Let's Talk
+---
 
-> I take on freelance .NET/backend work. If you have something that needs building — or you just want to talk shop about caching, ASP.NET Core, or backend architecture — reach out on [GitHub](https://github.com/alparslanakbas) or [LinkedIn](https://www.linkedin.com/in/alparslanakbas/), or drop me an [email](mailto:bybluestht@gmail.com).
-{: .prompt-tip }
+[GitHub](https://github.com/alparslanakbas) · [LinkedIn](https://www.linkedin.com/in/alparslanakbas/) · [Email](mailto:bybluestht@gmail.com)
